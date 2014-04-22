@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  root 'sitemaps#new'
+  get '/validate' => 'sitemaps#validate', as: 'validate_sitemap'
+  post '/validate' => 'sitemaps#validate'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

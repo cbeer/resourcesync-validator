@@ -1,0 +1,6 @@
+<li class="sitemap">
+  <h4 class="loc"><%= link_to sitemap.loc, validate_sitemap_path(sitemap: { url: sitemap.loc}) %></h4>
+  
+  <time class="lastmod"><%= sitemap.lastmod %></time>
+  <div class="changefreq"><%= sitemap.changefreq %></div>
+</li>
