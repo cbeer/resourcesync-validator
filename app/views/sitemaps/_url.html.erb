@@ -1,12 +1,7 @@
 <li class="url">
   <h4 class="loc"><%= link_to url.loc, url.loc %></h4>
   
-  <dl>
-    <dt>Last modified:</dt>
-    <dd class="lastmod"><time><%= url.lastmod %></time></dd>
-    <% if url.changefreq %>
-    <dt>Change Frequency:</dt>
-    <dd class="changefreq"><%= url.changefreq %></dd>
-    <% end %>
+  <dl class="dl-horizontal">
+    <%= render 'common_core', object: url %>
   </dl>
 </li>

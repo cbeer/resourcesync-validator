@@ -1,0 +1,16 @@
+<dt>Last modified:</dt>
+<dd class="lastmod">
+  <% if object.lastmod %>
+    <time><%= object.lastmod %></time>
+  <% else %>
+    <span class="label label-warning">Missing</span>
+  <% end %>
+</dd>
+<% if object.changefreq %>
+<dt>Change Frequency:</dt>
+<dd class="changefreq"><%= object.changefreq %></dd>
+<% end %>
+<% if object.priority %>
+<dt>Priority:</dt>
+<dd class="priority"><%= object.priority %></dd>
+<% end %>

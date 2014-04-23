@@ -3,12 +3,7 @@
     <small><%= link_to "[xml]", sitemap.loc %></small>
   </h4>
   
-  <dl>
-    <dt>Last modified:</dt>
-    <dd class="lastmod"><time><%= sitemap.lastmod %></time></dd>
-    <% if sitemap.changefreq %>
-    <dt>Change Frequency:</dt>
-    <dd class="changefreq"><%= sitemap.changefreq %></dd>
-    <% end %>
+  <dl class="dl-horizontal">
+    <%= render 'common_core', object: sitemap %>
   </dl>
 </li>
