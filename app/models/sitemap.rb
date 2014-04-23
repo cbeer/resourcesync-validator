@@ -1,3 +1,4 @@
+require 'benchmark'
 class Sitemap
   extend ActiveModel::Naming
   include ActiveModel::Conversion
@@ -24,8 +25,27 @@ class Sitemap
     end
   end
   
+  def timing
+    response
+    @timing
+  end
+  
   def response
-    @response ||= Faraday.get @url
+    @response ||= recording_timing_information(:@timing) do
+      Faraday.get @url
+    end
+  end
+  
+  def recording_timing_information as, &block
+    tmp = nil
+    
+    timing = Benchmark.realtime do 
+      tmp = yield
+    end
+    
+    instance_variable_set(as, timing)
+
+    tmp
   end
   
   def doc

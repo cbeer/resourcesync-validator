@@ -1,0 +1,10 @@
+<div class="status">
+  <label>HTTP Status
+<% case @sitemap.response.status %>
+<% when 200 %>
+<span class="label label-success">OK</span>
+<% else %>
+<span class="label label-danger"><%= @sitemap.response.status %></span>
+<% end %>
+</label>
+</div>
