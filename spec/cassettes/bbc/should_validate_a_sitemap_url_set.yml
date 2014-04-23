@@ -21,15 +21,15 @@ http_interactions:
       Server:
       - Apache
       Expires:
-      - Wed, 23 Apr 2014 16:11:27 GMT
+      - Wed, 23 Apr 2014 18:12:17 GMT
       Content-Language:
       - en-GB
       Content-Type:
       - text/xml
       Content-Length:
-      - '192652'
+      - '198110'
       Date:
-      - Wed, 23 Apr 2014 16:10:57 GMT
+      - Wed, 23 Apr 2014 18:11:47 GMT
       Connection:
       - keep-alive
       X-Cache-Action:
@@ -48,310 +48,670 @@ http_interactions:
         <?xml version="1.0" encoding="UTF-8"?>
         <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
            <url>
-            <loc>http://www.bbc.co.uk/news/world-europe-27131543</loc>
-            <lastmod>2014-04-23T16:08:03Z</lastmod>
+            <loc>http://www.bbc.co.uk/news/uk-27122380</loc>
+            <lastmod>2014-04-23T18:07:19Z</lastmod>
             <changefreq>always</changefreq>
             <priority>1.0</priority>
           </url>
            <url>
-            <loc>http://www.bbc.co.uk/news/uk-northern-ireland-27127280</loc>
-            <lastmod>2014-04-23T16:07:59Z</lastmod>
+            <loc>http://www.bbc.co.uk/news/uk-england-sussex-27130223</loc>
+            <lastmod>2014-04-23T18:04:14Z</lastmod>
             <changefreq>always</changefreq>
             <priority>1.0</priority>
           </url>
            <url>
-            <loc>http://www.bbc.co.uk/news/uk-wales-south-west-wales-27130779</loc>
-            <lastmod>2014-04-23T16:06:51Z</lastmod>
+            <loc>http://www.bbc.co.uk/news/world-us-canada-27131635</loc>
+            <lastmod>2014-04-23T18:04:11Z</lastmod>
             <changefreq>always</changefreq>
             <priority>1.0</priority>
           </url>
            <url>
-            <loc>http://www.bbc.co.uk/news/uk-scotland-north-east-orkney-shetland-27129666</loc>
-            <lastmod>2014-04-23T16:06:17Z</lastmod>
+            <loc>http://www.bbc.co.uk/news/technology-27132980</loc>
+            <lastmod>2014-04-23T18:04:14Z</lastmod>
+            <changefreq>always</changefreq>
+            <priority>1.0</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/world-europe-27129727</loc>
+            <lastmod>2014-04-23T17:56:33Z</lastmod>
+            <changefreq>always</changefreq>
+            <priority>1.0</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/blogs-trending-27132187</loc>
+            <lastmod>2014-04-23T18:05:24Z</lastmod>
+            <changefreq>always</changefreq>
+            <priority>1.0</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/uk-england-lincolnshire-27124767</loc>
+            <lastmod>2014-04-23T17:54:46Z</lastmod>
             <changefreq>always</changefreq>
             <priority>1.0</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-northern-ireland-27112737</loc>
-            <lastmod>2014-04-23T16:05:23Z</lastmod>
+            <lastmod>2014-04-23T17:58:58Z</lastmod>
             <changefreq>always</changefreq>
             <priority>1.0</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/world-us-canada-11874276</loc>
+            <lastmod>2014-04-23T17:50:54Z</lastmod>
+            <changefreq>always</changefreq>
+            <priority>1.0</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/entertainment-arts-27135475</loc>
+            <lastmod>2014-04-23T17:52:31Z</lastmod>
+            <changefreq>always</changefreq>
+            <priority>1.0</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/uk-england-27129882</loc>
+            <lastmod>2014-04-23T17:54:33Z</lastmod>
+            <changefreq>always</changefreq>
+            <priority>1.0</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/world-asia-27122991</loc>
+            <lastmod>2014-04-23T17:46:13Z</lastmod>
+            <changefreq>always</changefreq>
+            <priority>1.0</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/world-europe-jersey-27126386</loc>
+            <lastmod>2014-04-23T17:43:17Z</lastmod>
+            <changefreq>always</changefreq>
+            <priority>1.0</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/health-27122644</loc>
+            <lastmod>2014-04-23T17:43:09Z</lastmod>
+            <changefreq>always</changefreq>
+            <priority>1.0</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/uk-scotland-tayside-central-27126360</loc>
+            <lastmod>2014-04-23T17:41:49Z</lastmod>
+            <changefreq>always</changefreq>
+            <priority>1.0</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/uk-27122645</loc>
+            <lastmod>2014-04-23T17:39:43Z</lastmod>
+            <changefreq>always</changefreq>
+            <priority>1.0</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/world-africa-27133714</loc>
+            <lastmod>2014-04-23T17:42:36Z</lastmod>
+            <changefreq>always</changefreq>
+            <priority>1.0</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/world-us-canada-27121311</loc>
+            <lastmod>2014-04-23T17:44:48Z</lastmod>
+            <changefreq>always</changefreq>
+            <priority>1.0</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/uk-northern-ireland-27135170</loc>
+            <lastmod>2014-04-23T17:37:02Z</lastmod>
+            <changefreq>always</changefreq>
+            <priority>1.0</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/uk-politics-27123883</loc>
+            <lastmod>2014-04-23T17:34:12Z</lastmod>
+            <changefreq>always</changefreq>
+            <priority>1.0</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/uk-northern-ireland-27135171</loc>
+            <lastmod>2014-04-23T17:32:13Z</lastmod>
+            <changefreq>always</changefreq>
+            <priority>1.0</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/uk-england-27130721</loc>
+            <lastmod>2014-04-23T17:30:10Z</lastmod>
+            <changefreq>always</changefreq>
+            <priority>1.0</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/uk-scotland-scotland-business-27132727</loc>
+            <lastmod>2014-04-23T17:27:51Z</lastmod>
+            <changefreq>always</changefreq>
+            <priority>1.0</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/uk-politics-27134988</loc>
+            <lastmod>2014-04-23T17:28:40Z</lastmod>
+            <changefreq>always</changefreq>
+            <priority>1.0</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/business-27132640</loc>
+            <lastmod>2014-04-23T17:32:26Z</lastmod>
+            <changefreq>always</changefreq>
+            <priority>1.0</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/uk-england-bristol-27133052</loc>
+            <lastmod>2014-04-23T17:18:23Z</lastmod>
+            <changefreq>always</changefreq>
+            <priority>1.0</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/uk-politics-27132719</loc>
+            <lastmod>2014-04-23T17:14:43Z</lastmod>
+            <changefreq>always</changefreq>
+            <priority>1.0</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/uk-scotland-tayside-central-27114857</loc>
+            <lastmod>2014-04-23T17:12:58Z</lastmod>
+            <changefreq>always</changefreq>
+            <priority>1.0</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/uk-england-london-27122410</loc>
+            <lastmod>2014-04-23T17:10:51Z</lastmod>
+            <changefreq>always</changefreq>
+            <priority>1.0</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/uk-politics-27134696</loc>
+            <lastmod>2014-04-23T17:10:08Z</lastmod>
+            <changefreq>always</changefreq>
+            <priority>1.0</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/uk-27130119</loc>
+            <lastmod>2014-04-23T17:09:53Z</lastmod>
+            <changefreq>always</changefreq>
+            <priority>1.0</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/world-latin-america-27133774</loc>
+            <lastmod>2014-04-23T17:07:33Z</lastmod>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/uk-england-norfolk-27131280</loc>
+            <lastmod>2014-04-23T17:07:26Z</lastmod>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/business-27128843</loc>
+            <lastmod>2014-04-23T17:06:13Z</lastmod>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/uk-scotland-edinburgh-east-fife-27128172</loc>
+            <lastmod>2014-04-23T17:03:13Z</lastmod>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/uk-england-27132482</loc>
+            <lastmod>2014-04-23T17:02:55Z</lastmod>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/uk-england-lincolnshire-27124390</loc>
+            <lastmod>2014-04-23T17:02:27Z</lastmod>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/world-europe-27124453</loc>
+            <lastmod>2014-04-23T17:01:18Z</lastmod>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/uk-scotland-glasgow-west-27129971</loc>
+            <lastmod>2014-04-23T17:00:30Z</lastmod>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/world-europe-27131543</loc>
+            <lastmod>2014-04-23T16:59:46Z</lastmod>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/uk-england-nottinghamshire-27133529</loc>
+            <lastmod>2014-04-23T16:58:44Z</lastmod>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/world-middle-east-27128902</loc>
+            <lastmod>2014-04-23T16:55:31Z</lastmod>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/uk-england-27132883</loc>
+            <lastmod>2014-04-23T16:55:15Z</lastmod>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/uk-england-27129336</loc>
+            <lastmod>2014-04-23T16:50:35Z</lastmod>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/uk-england-kent-27126183</loc>
+            <lastmod>2014-04-23T16:49:03Z</lastmod>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/business-11876811</loc>
+            <lastmod>2014-04-23T16:47:02Z</lastmod>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/uk-politics-27126465</loc>
+            <lastmod>2014-04-23T16:45:54Z</lastmod>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/10462520</loc>
+            <lastmod>2014-04-23T16:42:36Z</lastmod>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/world-europe-27133752</loc>
+            <lastmod>2014-04-23T16:55:54Z</lastmod>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/entertainment-arts-27132979</loc>
+            <lastmod>2014-04-23T16:39:43Z</lastmod>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/world-27124997</loc>
+            <lastmod>2014-04-23T16:36:03Z</lastmod>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/uk-northern-ireland-27133878</loc>
+            <lastmod>2014-04-23T16:39:15Z</lastmod>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/uk-england-27132407</loc>
+            <lastmod>2014-04-23T16:30:31Z</lastmod>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/business-11899862</loc>
+            <lastmod>2014-04-23T16:26:24Z</lastmod>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/uk-england-cumbria-27129418</loc>
+            <lastmod>2014-04-23T16:25:54Z</lastmod>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/uk-england-berkshire-27126907</loc>
+            <lastmod>2014-04-23T16:20:24Z</lastmod>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/uk-27127065</loc>
+            <lastmod>2014-04-23T16:18:42Z</lastmod>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/world-africa-27133215</loc>
+            <lastmod>2014-04-23T16:18:40Z</lastmod>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/10318236</loc>
+            <lastmod>2014-04-23T16:16:34Z</lastmod>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/uk-northern-ireland-27133675</loc>
+            <lastmod>2014-04-23T16:15:38Z</lastmod>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/uk-northern-ireland-27134252</loc>
+            <lastmod>2014-04-23T16:15:34Z</lastmod>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/uk-scotland-scotland-politics-27132509</loc>
+            <lastmod>2014-04-23T16:14:27Z</lastmod>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/uk-scotland-scotland-politics-27133511</loc>
+            <lastmod>2014-04-23T16:11:31Z</lastmod>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/world-asia-27122134</loc>
+            <lastmod>2014-04-23T16:13:20Z</lastmod>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/uk-northern-ireland-27127280</loc>
+            <lastmod>2014-04-23T16:52:18Z</lastmod>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/uk-wales-south-west-wales-27130779</loc>
+            <lastmod>2014-04-23T16:06:51Z</lastmod>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/uk-scotland-north-east-orkney-shetland-27129666</loc>
+            <lastmod>2014-04-23T16:06:17Z</lastmod>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-northern-ireland-27133877</loc>
             <lastmod>2014-04-23T16:05:21Z</lastmod>
-            <changefreq>always</changefreq>
-            <priority>1.0</priority>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-england-27116085</loc>
-            <lastmod>2014-04-23T16:04:38Z</lastmod>
-            <changefreq>always</changefreq>
-            <priority>1.0</priority>
-          </url>
-           <url>
-            <loc>http://www.bbc.co.uk/news/uk-politics-27126465</loc>
-            <lastmod>2014-04-23T16:00:37Z</lastmod>
-            <changefreq>always</changefreq>
-            <priority>1.0</priority>
+            <lastmod>2014-04-23T16:55:06Z</lastmod>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-politics-27129817</loc>
-            <lastmod>2014-04-23T16:01:05Z</lastmod>
+            <lastmod>2014-04-23T17:15:20Z</lastmod>
             <changefreq>always</changefreq>
             <priority>1.0</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-england-suffolk-27129407</loc>
             <lastmod>2014-04-23T15:58:31Z</lastmod>
-            <changefreq>always</changefreq>
-            <priority>1.0</priority>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/entertainment-arts-27128600</loc>
             <lastmod>2014-04-23T15:58:18Z</lastmod>
-            <changefreq>always</changefreq>
-            <priority>1.0</priority>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-england-merseyside-27119412</loc>
             <lastmod>2014-04-23T15:52:13Z</lastmod>
-            <changefreq>always</changefreq>
-            <priority>1.0</priority>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-northern-ireland-27117190</loc>
             <lastmod>2014-04-23T15:51:47Z</lastmod>
-            <changefreq>always</changefreq>
-            <priority>1.0</priority>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/world-us-canada-27132347</loc>
             <lastmod>2014-04-23T15:51:17Z</lastmod>
-            <changefreq>always</changefreq>
-            <priority>1.0</priority>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-scotland-south-scotland-27131976</loc>
             <lastmod>2014-04-23T15:51:13Z</lastmod>
-            <changefreq>always</changefreq>
-            <priority>1.0</priority>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-england-shropshire-27129267</loc>
             <lastmod>2014-04-23T15:46:47Z</lastmod>
-            <changefreq>always</changefreq>
-            <priority>1.0</priority>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-wales-mid-wales-27131998</loc>
             <lastmod>2014-04-23T15:46:00Z</lastmod>
-            <changefreq>always</changefreq>
-            <priority>1.0</priority>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/world-middle-east-27126348</loc>
             <lastmod>2014-04-23T15:48:22Z</lastmod>
-            <changefreq>always</changefreq>
-            <priority>1.0</priority>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/world-latin-america-27126855</loc>
             <lastmod>2014-04-23T15:44:25Z</lastmod>
-            <changefreq>always</changefreq>
-            <priority>1.0</priority>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-scotland-tayside-central-27132929</loc>
             <lastmod>2014-04-23T15:43:38Z</lastmod>
-            <changefreq>always</changefreq>
-            <priority>1.0</priority>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-england-hampshire-27132301</loc>
             <lastmod>2014-04-23T15:42:22Z</lastmod>
-            <changefreq>always</changefreq>
-            <priority>1.0</priority>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/blogs-news-from-elsewhere-27132609</loc>
             <lastmod>2014-04-23T15:58:06Z</lastmod>
-            <changefreq>always</changefreq>
-            <priority>1.0</priority>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-scotland-edinburgh-east-fife-27131984</loc>
             <lastmod>2014-04-23T15:51:20Z</lastmod>
-            <changefreq>always</changefreq>
-            <priority>1.0</priority>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-wales-north-west-wales-27125840</loc>
             <lastmod>2014-04-23T15:38:42Z</lastmod>
-            <changefreq>always</changefreq>
-            <priority>1.0</priority>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-scotland-27129255</loc>
             <lastmod>2014-04-23T15:37:33Z</lastmod>
-            <changefreq>always</changefreq>
-            <priority>1.0</priority>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-england-coventry-warwickshire-27131053</loc>
-            <lastmod>2014-04-23T15:35:11Z</lastmod>
-            <changefreq>always</changefreq>
-            <priority>1.0</priority>
+            <lastmod>2014-04-23T16:15:02Z</lastmod>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-england-27116088</loc>
             <lastmod>2014-04-23T15:34:17Z</lastmod>
-            <changefreq>always</changefreq>
-            <priority>1.0</priority>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/world-middle-east-27133354</loc>
             <lastmod>2014-04-23T15:33:44Z</lastmod>
-            <changefreq>always</changefreq>
-            <priority>1.0</priority>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-northern-ireland-27130058</loc>
-            <lastmod>2014-04-23T15:33:27Z</lastmod>
+            <lastmod>2014-04-23T17:30:52Z</lastmod>
             <changefreq>always</changefreq>
             <priority>1.0</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-england-merseyside-27123197</loc>
-            <lastmod>2014-04-23T15:28:48Z</lastmod>
-            <changefreq>always</changefreq>
-            <priority>1.0</priority>
+            <lastmod>2014-04-23T16:57:59Z</lastmod>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/world-asia-27131507</loc>
             <lastmod>2014-04-23T15:27:57Z</lastmod>
-            <changefreq>always</changefreq>
-            <priority>1.0</priority>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-england-south-yorkshire-27128105</loc>
-            <lastmod>2014-04-23T16:07:03Z</lastmod>
-            <changefreq>always</changefreq>
-            <priority>1.0</priority>
+            <lastmod>2014-04-23T16:16:19Z</lastmod>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-england-beds-bucks-herts-27128684</loc>
             <lastmod>2014-04-23T15:26:09Z</lastmod>
-            <changefreq>always</changefreq>
-            <priority>1.0</priority>
-          </url>
-           <url>
-            <loc>http://www.bbc.co.uk/news/world-middle-east-27128902</loc>
-            <lastmod>2014-04-23T15:25:40Z</lastmod>
-            <changefreq>always</changefreq>
-            <priority>1.0</priority>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-england-beds-bucks-herts-27132751</loc>
             <lastmod>2014-04-23T15:28:47Z</lastmod>
-            <changefreq>always</changefreq>
-            <priority>1.0</priority>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-england-leicestershire-27128048</loc>
             <lastmod>2014-04-23T16:01:10Z</lastmod>
-            <changefreq>always</changefreq>
-            <priority>1.0</priority>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/world-europe-27126837</loc>
             <lastmod>2014-04-23T15:22:51Z</lastmod>
-            <changefreq>always</changefreq>
-            <priority>1.0</priority>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-27132313</loc>
             <lastmod>2014-04-23T15:22:46Z</lastmod>
-            <changefreq>always</changefreq>
-            <priority>1.0</priority>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-scotland-27129252</loc>
-            <lastmod>2014-04-23T15:22:34Z</lastmod>
-            <changefreq>always</changefreq>
-            <priority>1.0</priority>
+            <lastmod>2014-04-23T16:29:44Z</lastmod>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-england-essex-27128364</loc>
             <lastmod>2014-04-23T15:21:08Z</lastmod>
-            <changefreq>always</changefreq>
-            <priority>1.0</priority>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/technology-27133160</loc>
             <lastmod>2014-04-23T15:42:21Z</lastmod>
-            <changefreq>always</changefreq>
-            <priority>1.0</priority>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-scotland-tayside-central-27130328</loc>
             <lastmod>2014-04-23T15:20:46Z</lastmod>
-            <changefreq>always</changefreq>
-            <priority>1.0</priority>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/technology-27131319</loc>
             <lastmod>2014-04-23T15:19:37Z</lastmod>
-            <changefreq>always</changefreq>
-            <priority>1.0</priority>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-politics-27132047</loc>
-            <lastmod>2014-04-23T15:19:25Z</lastmod>
+            <lastmod>2014-04-23T16:37:21Z</lastmod>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
+          </url>
+           <url>
+            <loc>http://www.bbc.co.uk/news/uk-england-leicestershire-27125187</loc>
+            <lastmod>2014-04-23T17:22:35Z</lastmod>
             <changefreq>always</changefreq>
             <priority>1.0</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-scotland-scotland-politics-27130848</loc>
             <lastmod>2014-04-23T15:17:04Z</lastmod>
-            <changefreq>always</changefreq>
-            <priority>1.0</priority>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-27131112</loc>
             <lastmod>2014-04-23T15:24:21Z</lastmod>
-            <changefreq>always</changefreq>
-            <priority>1.0</priority>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-scotland-glasgow-west-27127131</loc>
             <lastmod>2014-04-23T15:13:55Z</lastmod>
-            <changefreq>always</changefreq>
-            <priority>1.0</priority>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-politics-27121879</loc>
             <lastmod>2014-04-23T15:12:45Z</lastmod>
-            <changefreq>always</changefreq>
-            <priority>1.0</priority>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-england-sussex-27126189</loc>
             <lastmod>2014-04-23T15:11:05Z</lastmod>
-            <changefreq>always</changefreq>
-            <priority>1.0</priority>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/entertainment-arts-27132710</loc>
             <lastmod>2014-04-23T15:48:37Z</lastmod>
-            <changefreq>always</changefreq>
-            <priority>1.0</priority>
-          </url>
-           <url>
-            <loc>http://www.bbc.co.uk/news/uk-england-london-27122410</loc>
-            <lastmod>2014-04-23T15:23:42Z</lastmod>
-            <changefreq>always</changefreq>
-            <priority>1.0</priority>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/world-latin-america-27126861</loc>
@@ -380,8 +740,8 @@ http_interactions:
            <url>
             <loc>http://www.bbc.co.uk/news/uk-england-leeds-27131568</loc>
             <lastmod>2014-04-23T15:09:34Z</lastmod>
-            <changefreq>always</changefreq>
-            <priority>1.0</priority>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/entertainment-arts-27127199</loc>
@@ -398,8 +758,8 @@ http_interactions:
            <url>
             <loc>http://www.bbc.co.uk/news/uk-27122060</loc>
             <lastmod>2014-04-23T15:27:09Z</lastmod>
-            <changefreq>always</changefreq>
-            <priority>1.0</priority>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/business-27126940</loc>
@@ -414,16 +774,10 @@ http_interactions:
             <priority>0.9</priority>
           </url>
            <url>
-            <loc>http://www.bbc.co.uk/news/world-europe-27124453</loc>
-            <lastmod>2014-04-23T15:24:17Z</lastmod>
-            <changefreq>always</changefreq>
-            <priority>1.0</priority>
-          </url>
-           <url>
             <loc>http://www.bbc.co.uk/news/business-27129311</loc>
             <lastmod>2014-04-23T15:19:56Z</lastmod>
-            <changefreq>always</changefreq>
-            <priority>1.0</priority>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-england-bristol-27129326</loc>
@@ -450,20 +804,8 @@ http_interactions:
             <priority>0.9</priority>
           </url>
            <url>
-            <loc>http://www.bbc.co.uk/news/10462520</loc>
-            <lastmod>2014-04-23T14:37:55Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
-          </url>
-           <url>
             <loc>http://www.bbc.co.uk/news/uk-scotland-scotland-politics-27131817</loc>
             <lastmod>2014-04-23T14:36:40Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
-          </url>
-           <url>
-            <loc>http://www.bbc.co.uk/news/uk-27127065</loc>
-            <lastmod>2014-04-23T14:35:46Z</lastmod>
             <changefreq>hourly</changefreq>
             <priority>0.9</priority>
           </url>
@@ -512,8 +854,8 @@ http_interactions:
            <url>
             <loc>http://www.bbc.co.uk/news/science-environment-27039710</loc>
             <lastmod>2014-04-23T16:02:37Z</lastmod>
-            <changefreq>always</changefreq>
-            <priority>1.0</priority>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/world-asia-27116863</loc>
@@ -548,12 +890,6 @@ http_interactions:
            <url>
             <loc>http://www.bbc.co.uk/news/entertainment-arts-27128599</loc>
             <lastmod>2014-04-23T14:45:01Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
-          </url>
-           <url>
-            <loc>http://www.bbc.co.uk/news/10318236</loc>
-            <lastmod>2014-04-23T14:06:41Z</lastmod>
             <changefreq>hourly</changefreq>
             <priority>0.9</priority>
           </url>
@@ -614,8 +950,8 @@ http_interactions:
            <url>
             <loc>http://www.bbc.co.uk/news/world-asia-27125789</loc>
             <lastmod>2014-04-23T15:42:59Z</lastmod>
-            <changefreq>always</changefreq>
-            <priority>1.0</priority>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-england-stoke-staffordshire-27122556</loc>
@@ -648,12 +984,6 @@ http_interactions:
             <priority>0.9</priority>
           </url>
            <url>
-            <loc>http://www.bbc.co.uk/news/uk-27130119</loc>
-            <lastmod>2014-04-23T14:11:21Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
-          </url>
-           <url>
             <loc>http://www.bbc.co.uk/news/blogs-magazine-monitor-27126160</loc>
             <lastmod>2014-04-23T14:55:21Z</lastmod>
             <changefreq>hourly</changefreq>
@@ -680,12 +1010,12 @@ http_interactions:
            <url>
             <loc>http://www.bbc.co.uk/news/uk-england-27128417</loc>
             <lastmod>2014-04-23T15:25:54Z</lastmod>
-            <changefreq>always</changefreq>
-            <priority>1.0</priority>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-scotland-scotland-politics-27114123</loc>
-            <lastmod>2014-04-23T13:35:28Z</lastmod>
+            <lastmod>2014-04-23T17:05:23Z</lastmod>
             <changefreq>hourly</changefreq>
             <priority>0.9</priority>
           </url>
@@ -704,12 +1034,6 @@ http_interactions:
            <url>
             <loc>http://www.bbc.co.uk/news/uk-northern-ireland-foyle-west-27127981</loc>
             <lastmod>2014-04-23T13:31:17Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
-          </url>
-           <url>
-            <loc>http://www.bbc.co.uk/news/world-asia-27122991</loc>
-            <lastmod>2014-04-23T13:29:08Z</lastmod>
             <changefreq>hourly</changefreq>
             <priority>0.9</priority>
           </url>
@@ -739,7 +1063,7 @@ http_interactions:
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-northern-ireland-27129832</loc>
-            <lastmod>2014-04-23T13:23:33Z</lastmod>
+            <lastmod>2014-04-23T16:09:17Z</lastmod>
             <changefreq>hourly</changefreq>
             <priority>0.9</priority>
           </url>
@@ -776,12 +1100,6 @@ http_interactions:
            <url>
             <loc>http://www.bbc.co.uk/news/uk-england-beds-bucks-herts-27060790</loc>
             <lastmod>2014-04-23T13:15:38Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
-          </url>
-           <url>
-            <loc>http://www.bbc.co.uk/news/uk-scotland-tayside-central-27126360</loc>
-            <lastmod>2014-04-23T13:14:48Z</lastmod>
             <changefreq>hourly</changefreq>
             <priority>0.9</priority>
           </url>
@@ -824,12 +1142,6 @@ http_interactions:
            <url>
             <loc>http://www.bbc.co.uk/news/uk-england-beds-bucks-herts-27115151</loc>
             <lastmod>2014-04-23T13:02:33Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
-          </url>
-           <url>
-            <loc>http://www.bbc.co.uk/news/uk-scotland-tayside-central-27114857</loc>
-            <lastmod>2014-04-23T15:01:22Z</lastmod>
             <changefreq>hourly</changefreq>
             <priority>0.9</priority>
           </url>
@@ -912,12 +1224,6 @@ http_interactions:
             <priority>0.9</priority>
           </url>
            <url>
-            <loc>http://www.bbc.co.uk/news/uk-27122645</loc>
-            <lastmod>2014-04-23T12:39:49Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
-          </url>
-           <url>
             <loc>http://www.bbc.co.uk/news/world-europe-26387353</loc>
             <lastmod>2014-04-23T12:39:36Z</lastmod>
             <changefreq>hourly</changefreq>
@@ -931,9 +1237,9 @@ http_interactions:
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-northern-ireland-27127283</loc>
-            <lastmod>2014-04-23T12:36:33Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
+            <lastmod>2014-04-23T17:31:00Z</lastmod>
+            <changefreq>always</changefreq>
+            <priority>1.0</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-england-humber-27128192</loc>
@@ -979,9 +1285,9 @@ http_interactions:
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-27125740</loc>
-            <lastmod>2014-04-23T12:16:45Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
+            <lastmod>2014-04-23T17:19:38Z</lastmod>
+            <changefreq>always</changefreq>
+            <priority>1.0</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/world-middle-east-27122387</loc>
@@ -1016,8 +1322,8 @@ http_interactions:
            <url>
             <loc>http://www.bbc.co.uk/news/entertainment-arts-27077475</loc>
             <lastmod>2014-04-23T16:03:09Z</lastmod>
-            <changefreq>always</changefreq>
-            <priority>1.0</priority>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/business-27128112</loc>
@@ -1068,12 +1374,6 @@ http_interactions:
             <priority>0.9</priority>
           </url>
            <url>
-            <loc>http://www.bbc.co.uk/news/uk-scotland-edinburgh-east-fife-27128172</loc>
-            <lastmod>2014-04-23T13:20:11Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
-          </url>
-           <url>
             <loc>http://www.bbc.co.uk/news/uk-wales-27119239</loc>
             <lastmod>2014-04-23T11:46:02Z</lastmod>
             <changefreq>hourly</changefreq>
@@ -1093,19 +1393,13 @@ http_interactions:
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/world-latin-america-27121677</loc>
-            <lastmod>2014-04-23T12:11:48Z</lastmod>
+            <lastmod>2014-04-23T17:08:16Z</lastmod>
             <changefreq>hourly</changefreq>
             <priority>0.9</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-england-cornwall-27118172</loc>
             <lastmod>2014-04-23T11:39:32Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
-          </url>
-           <url>
-            <loc>http://www.bbc.co.uk/news/business-11899862</loc>
-            <lastmod>2014-04-23T11:39:22Z</lastmod>
             <changefreq>hourly</changefreq>
             <priority>0.9</priority>
           </url>
@@ -1147,9 +1441,9 @@ http_interactions:
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-27122951</loc>
-            <lastmod>2014-04-23T13:01:37Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
+            <lastmod>2014-04-23T17:57:40Z</lastmod>
+            <changefreq>always</changefreq>
+            <priority>1.0</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-wales-north-east-wales-27122789</loc>
@@ -1195,7 +1489,7 @@ http_interactions:
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/entertainment-arts-27123439</loc>
-            <lastmod>2014-04-23T15:32:40Z</lastmod>
+            <lastmod>2014-04-23T18:06:06Z</lastmod>
             <changefreq>always</changefreq>
             <priority>1.0</priority>
           </url>
@@ -1207,7 +1501,7 @@ http_interactions:
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-england-hampshire-27126132</loc>
-            <lastmod>2014-04-23T11:02:15Z</lastmod>
+            <lastmod>2014-04-23T16:12:47Z</lastmod>
             <changefreq>hourly</changefreq>
             <priority>0.9</priority>
           </url>
@@ -1279,7 +1573,7 @@ http_interactions:
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-27123966</loc>
-            <lastmod>2014-04-23T14:09:56Z</lastmod>
+            <lastmod>2014-04-23T16:52:54Z</lastmod>
             <changefreq>hourly</changefreq>
             <priority>0.9</priority>
           </url>
@@ -1297,9 +1591,9 @@ http_interactions:
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-27122384</loc>
-            <lastmod>2014-04-23T12:27:52Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
+            <lastmod>2014-04-23T17:40:40Z</lastmod>
+            <changefreq>always</changefreq>
+            <priority>1.0</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-scotland-north-east-orkney-shetland-27125557</loc>
@@ -1310,8 +1604,8 @@ http_interactions:
            <url>
             <loc>http://www.bbc.co.uk/news/business-27125936</loc>
             <lastmod>2014-04-23T15:12:30Z</lastmod>
-            <changefreq>always</changefreq>
-            <priority>1.0</priority>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-england-hereford-worcester-27120924</loc>
@@ -1358,8 +1652,8 @@ http_interactions:
            <url>
             <loc>http://www.bbc.co.uk/news/entertainment-arts-27123434</loc>
             <lastmod>2014-04-23T16:08:01Z</lastmod>
-            <changefreq>always</changefreq>
-            <priority>1.0</priority>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-england-lincolnshire-27111122</loc>
@@ -1478,8 +1772,8 @@ http_interactions:
            <url>
             <loc>http://www.bbc.co.uk/news/technology-27108869</loc>
             <lastmod>2014-04-23T15:52:57Z</lastmod>
-            <changefreq>always</changefreq>
-            <priority>1.0</priority>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/world-us-canada-16841111</loc>
@@ -1506,16 +1800,10 @@ http_interactions:
             <priority>0.9</priority>
           </url>
            <url>
-            <loc>http://www.bbc.co.uk/news/world-asia-27122134</loc>
-            <lastmod>2014-04-23T12:09:29Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
-          </url>
-           <url>
             <loc>http://www.bbc.co.uk/news/uk-27122947</loc>
             <lastmod>2014-04-23T15:12:50Z</lastmod>
-            <changefreq>always</changefreq>
-            <priority>1.0</priority>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/world-asia-27122899</loc>
@@ -1590,12 +1878,6 @@ http_interactions:
             <priority>0.9</priority>
           </url>
            <url>
-            <loc>http://www.bbc.co.uk/news/business-11876811</loc>
-            <lastmod>2014-04-23T08:34:07Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
-          </url>
-           <url>
             <loc>http://www.bbc.co.uk/news/uk-england-27124006</loc>
             <lastmod>2014-04-23T08:33:56Z</lastmod>
             <changefreq>hourly</changefreq>
@@ -1615,7 +1897,7 @@ http_interactions:
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-27110348</loc>
-            <lastmod>2014-04-23T08:37:03Z</lastmod>
+            <lastmod>2014-04-23T16:21:50Z</lastmod>
             <changefreq>hourly</changefreq>
             <priority>0.9</priority>
           </url>
@@ -1651,7 +1933,7 @@ http_interactions:
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-politics-26870253</loc>
-            <lastmod>2014-04-23T10:38:29Z</lastmod>
+            <lastmod>2014-04-23T16:52:24Z</lastmod>
             <changefreq>hourly</changefreq>
             <priority>0.9</priority>
           </url>
@@ -1771,7 +2053,7 @@ http_interactions:
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-england-tyne-27118096</loc>
-            <lastmod>2014-04-23T06:56:32Z</lastmod>
+            <lastmod>2014-04-23T17:00:58Z</lastmod>
             <changefreq>hourly</changefreq>
             <priority>0.9</priority>
           </url>
@@ -1789,7 +2071,7 @@ http_interactions:
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-england-merseyside-27122958</loc>
-            <lastmod>2014-04-23T06:53:39Z</lastmod>
+            <lastmod>2014-04-23T17:01:18Z</lastmod>
             <changefreq>hourly</changefreq>
             <priority>0.9</priority>
           </url>
@@ -1819,19 +2101,19 @@ http_interactions:
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-england-birmingham-27117610</loc>
-            <lastmod>2014-04-23T06:48:35Z</lastmod>
+            <lastmod>2014-04-23T17:01:31Z</lastmod>
             <changefreq>hourly</changefreq>
             <priority>0.9</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-england-oxfordshire-27119274</loc>
-            <lastmod>2014-04-23T06:48:15Z</lastmod>
+            <lastmod>2014-04-23T17:01:02Z</lastmod>
             <changefreq>hourly</changefreq>
             <priority>0.9</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-england-derbyshire-27109438</loc>
-            <lastmod>2014-04-23T06:47:33Z</lastmod>
+            <lastmod>2014-04-23T17:01:28Z</lastmod>
             <changefreq>hourly</changefreq>
             <priority>0.9</priority>
           </url>
@@ -1843,13 +2125,7 @@ http_interactions:
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-england-london-27122937</loc>
-            <lastmod>2014-04-23T06:46:26Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
-          </url>
-           <url>
-            <loc>http://www.bbc.co.uk/news/health-27122644</loc>
-            <lastmod>2014-04-23T06:35:07Z</lastmod>
+            <lastmod>2014-04-23T17:01:36Z</lastmod>
             <changefreq>hourly</changefreq>
             <priority>0.9</priority>
           </url>
@@ -1904,12 +2180,6 @@ http_interactions:
            <url>
             <loc>http://www.bbc.co.uk/news/world-asia-india-27122108</loc>
             <lastmod>2014-04-23T05:52:55Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
-          </url>
-           <url>
-            <loc>http://www.bbc.co.uk/news/uk-27122380</loc>
-            <lastmod>2014-04-23T05:45:29Z</lastmod>
             <changefreq>hourly</changefreq>
             <priority>0.9</priority>
           </url>
@@ -2059,9 +2329,9 @@ http_interactions:
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/entertainment-arts-27110234</loc>
-            <lastmod>2014-04-23T15:48:47Z</lastmod>
-            <changefreq>always</changefreq>
-            <priority>1.0</priority>
+            <lastmod>2014-04-23T16:38:19Z</lastmod>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-scotland-highlands-islands-27113207</loc>
@@ -2125,9 +2395,9 @@ http_interactions:
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/world-africa-27111168</loc>
-            <lastmod>2014-04-23T05:14:32Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
+            <lastmod>2014-04-23T17:43:35Z</lastmod>
+            <changefreq>always</changefreq>
+            <priority>1.0</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/technology-27121199</loc>
@@ -2137,9 +2407,9 @@ http_interactions:
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/magazine-27055029</loc>
-            <lastmod>2014-04-22T23:34:40Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
+            <lastmod>2014-04-23T17:15:36Z</lastmod>
+            <changefreq>always</changefreq>
+            <priority>1.0</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/business-27087941</loc>
@@ -2174,8 +2444,8 @@ http_interactions:
            <url>
             <loc>http://www.bbc.co.uk/news/uk-england-coventry-warwickshire-27041828</loc>
             <lastmod>2014-04-23T15:49:15Z</lastmod>
-            <changefreq>always</changefreq>
-            <priority>1.0</priority>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/business-26993637</loc>
@@ -2192,8 +2462,8 @@ http_interactions:
            <url>
             <loc>http://www.bbc.co.uk/news/health-27113258</loc>
             <lastmod>2014-04-23T15:19:12Z</lastmod>
-            <changefreq>always</changefreq>
-            <priority>1.0</priority>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/business-27054174</loc>
@@ -2299,9 +2569,9 @@ http_interactions:
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/entertainment-arts-27121204</loc>
-            <lastmod>2014-04-22T21:22:11Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
+            <lastmod>2014-04-23T17:21:51Z</lastmod>
+            <changefreq>always</changefreq>
+            <priority>1.0</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-politics-27121070</loc>
@@ -2425,7 +2695,7 @@ http_interactions:
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/world-us-canada-27120499</loc>
-            <lastmod>2014-04-23T09:38:02Z</lastmod>
+            <lastmod>2014-04-23T16:55:42Z</lastmod>
             <changefreq>hourly</changefreq>
             <priority>0.9</priority>
           </url>
@@ -2618,8 +2888,8 @@ http_interactions:
            <url>
             <loc>http://www.bbc.co.uk/news/uk-england-gloucestershire-27111592</loc>
             <lastmod>2014-04-22T18:01:14Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/science-environment-27119324</loc>
@@ -2642,20 +2912,20 @@ http_interactions:
            <url>
             <loc>http://www.bbc.co.uk/news/world-asia-27118016</loc>
             <lastmod>2014-04-22T17:39:00Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-wales-27114605</loc>
             <lastmod>2014-04-22T17:33:31Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/entertainment-arts-27118103</loc>
             <lastmod>2014-04-22T17:31:30Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-england-27112037</loc>
@@ -2678,38 +2948,38 @@ http_interactions:
            <url>
             <loc>http://www.bbc.co.uk/news/uk-england-bristol-27113719</loc>
             <lastmod>2014-04-22T17:22:44Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/world-us-canada-27116861</loc>
             <lastmod>2014-04-22T17:20:30Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-wales-south-west-wales-27119052</loc>
             <lastmod>2014-04-22T17:09:08Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/technology-27118689</loc>
-            <lastmod>2014-04-22T17:09:06Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
+            <lastmod>2014-04-23T17:33:34Z</lastmod>
+            <changefreq>always</changefreq>
+            <priority>1.0</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/entertainment-arts-27118108</loc>
             <lastmod>2014-04-22T17:09:03Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-northern-ireland-27112732</loc>
             <lastmod>2014-04-22T17:07:37Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-england-leeds-27112745</loc>
@@ -2720,26 +2990,26 @@ http_interactions:
            <url>
             <loc>http://www.bbc.co.uk/news/uk-england-surrey-27119556</loc>
             <lastmod>2014-04-22T17:02:10Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-scotland-glasgow-west-27119228</loc>
             <lastmod>2014-04-22T16:55:19Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/world-europe-27119208</loc>
             <lastmod>2014-04-22T16:51:12Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/science-environment-27119435</loc>
             <lastmod>2014-04-22T16:51:08Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-wales-north-west-wales-27119054</loc>
@@ -2756,8 +3026,8 @@ http_interactions:
            <url>
             <loc>http://www.bbc.co.uk/news/world-europe-guernsey-27109550</loc>
             <lastmod>2014-04-22T16:46:41Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-wales-27116355</loc>
@@ -2768,8 +3038,8 @@ http_interactions:
            <url>
             <loc>http://www.bbc.co.uk/news/uk-scotland-glasgow-west-27119254</loc>
             <lastmod>2014-04-22T16:40:20Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-scotland-27116281</loc>
@@ -2780,20 +3050,20 @@ http_interactions:
            <url>
             <loc>http://www.bbc.co.uk/news/uk-england-27117010</loc>
             <lastmod>2014-04-22T16:35:12Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-wales-south-west-wales-27116425</loc>
             <lastmod>2014-04-22T16:34:11Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/world-africa-27116409</loc>
             <lastmod>2014-04-22T16:56:14Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-politics-27112774</loc>
@@ -2804,8 +3074,8 @@ http_interactions:
            <url>
             <loc>http://www.bbc.co.uk/news/uk-england-humber-27117341</loc>
             <lastmod>2014-04-22T16:25:57Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/world-middle-east-27116996</loc>
@@ -2816,26 +3086,26 @@ http_interactions:
            <url>
             <loc>http://www.bbc.co.uk/news/uk-england-suffolk-27115158</loc>
             <lastmod>2014-04-22T16:22:57Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/world-europe-27106630</loc>
             <lastmod>2014-04-22T16:34:17Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-27115875</loc>
             <lastmod>2014-04-22T16:21:41Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-scotland-scotland-politics-27116556</loc>
             <lastmod>2014-04-22T16:19:12Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/entertainment-arts-27116881</loc>
@@ -2846,20 +3116,20 @@ http_interactions:
            <url>
             <loc>http://www.bbc.co.uk/news/uk-england-lancashire-27117903</loc>
             <lastmod>2014-04-22T16:16:57Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/world-asia-27118587</loc>
             <lastmod>2014-04-22T16:15:26Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/world-middle-east-27113008</loc>
             <lastmod>2014-04-22T16:10:57Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-scotland-tayside-central-27118193</loc>
@@ -2876,8 +3146,8 @@ http_interactions:
            <url>
             <loc>http://www.bbc.co.uk/news/uk-england-merseyside-27110137</loc>
             <lastmod>2014-04-22T17:50:09Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/world-us-canada-27111790</loc>
@@ -2900,8 +3170,8 @@ http_interactions:
            <url>
             <loc>http://www.bbc.co.uk/news/technology-27113292</loc>
             <lastmod>2014-04-22T16:26:23Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-politics-27110655</loc>
@@ -2936,8 +3206,8 @@ http_interactions:
            <url>
             <loc>http://www.bbc.co.uk/news/blogs-trending-27115912</loc>
             <lastmod>2014-04-22T17:13:57Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-scotland-glasgow-west-27114110</loc>
@@ -3002,8 +3272,8 @@ http_interactions:
            <url>
             <loc>http://www.bbc.co.uk/news/uk-scotland-highlands-islands-27116417</loc>
             <lastmod>2014-04-22T16:55:02Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-scotland-scotland-politics-27110157</loc>
@@ -3565,9 +3835,9 @@ http_interactions:
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/technology-27110660</loc>
-            <lastmod>2014-04-22T12:23:47Z</lastmod>
-            <changefreq>daily</changefreq>
-            <priority>0.5</priority>
+            <lastmod>2014-04-23T17:34:35Z</lastmod>
+            <changefreq>always</changefreq>
+            <priority>1.0</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-scotland-tayside-central-27110721</loc>
@@ -4178,38 +4448,38 @@ http_interactions:
            <url>
             <loc>http://www.bbc.co.uk/news/uk-england-oxfordshire-27103968</loc>
             <lastmod>2014-04-22T16:56:25Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-england-tyne-27105338</loc>
             <lastmod>2014-04-22T17:03:01Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-england-merseyside-27105114</loc>
             <lastmod>2014-04-22T17:02:19Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-england-london-27107719</loc>
             <lastmod>2014-04-22T17:01:23Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-england-derbyshire-27104386</loc>
             <lastmod>2014-04-22T17:00:54Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-england-birmingham-27104708</loc>
             <lastmod>2014-04-22T17:00:52Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-wales-south-west-wales-27107916</loc>
@@ -4298,8 +4568,8 @@ http_interactions:
            <url>
             <loc>http://www.bbc.co.uk/news/uk-northern-ireland-27106754</loc>
             <lastmod>2014-04-23T15:35:58Z</lastmod>
-            <changefreq>always</changefreq>
-            <priority>1.0</priority>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-northern-ireland-27105894</loc>
@@ -4424,8 +4694,8 @@ http_interactions:
            <url>
             <loc>http://www.bbc.co.uk/news/blogs-magazine-monitor-27103589</loc>
             <lastmod>2014-04-22T16:54:59Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/world-us-canada-27104424</loc>
@@ -4514,8 +4784,8 @@ http_interactions:
            <url>
             <loc>http://www.bbc.co.uk/news/technology-27069716</loc>
             <lastmod>2014-04-22T16:22:11Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/world-us-canada-27106654</loc>
@@ -4754,8 +5024,8 @@ http_interactions:
            <url>
             <loc>http://www.bbc.co.uk/news/world-africa-27081948</loc>
             <lastmod>2014-04-22T17:28:43Z</lastmod>
-            <changefreq>hourly</changefreq>
-            <priority>0.9</priority>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
           </url>
            <url>
             <loc>http://www.bbc.co.uk/news/uk-england-merseyside-27102483</loc>
@@ -5915,109 +6185,101 @@ http_interactions:
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>
-           <url>
-            <loc>http://www.bbc.co.uk/news/uk-politics-27095575</loc>
-            <lastmod>2014-04-20T18:07:45Z</lastmod>
-            <changefreq>daily</changefreq>
-            <priority>0.5</priority>
-          </url>
-           <url>
-            <loc>http://www.bbc.co.uk/news/entertainment-arts-27098267</loc>
-            <lastmod>2014-04-21T07:19:28Z</lastmod>
-            <changefreq>daily</changefreq>
-            <priority>0.5</priority>
-          </url>
-           <url>
-            <loc>http://www.bbc.co.uk/news/world-asia-27096758</loc>
-            <lastmod>2014-04-21T11:04:46Z</lastmod>
-            <changefreq>daily</changefreq>
-            <priority>0.5</priority>
-          </url>
-           <url>
-            <loc>http://www.bbc.co.uk/news/world-asia-27098664</loc>
-            <lastmod>2014-04-20T17:39:23Z</lastmod>
-            <changefreq>daily</changefreq>
-            <priority>0.5</priority>
-          </url>
-           <url>
-            <loc>http://www.bbc.co.uk/news/uk-england-sussex-27094555</loc>
-            <lastmod>2014-04-20T17:35:28Z</lastmod>
-            <changefreq>daily</changefreq>
-            <priority>0.5</priority>
-          </url>
-           <url>
-            <loc>http://www.bbc.co.uk/news/uk-england-suffolk-27095024</loc>
-            <lastmod>2014-04-20T17:33:23Z</lastmod>
-            <changefreq>daily</changefreq>
-            <priority>0.5</priority>
-          </url>
-           <url>
-            <loc>http://www.bbc.co.uk/news/uk-northern-ireland-27097196</loc>
-            <lastmod>2014-04-20T17:26:34Z</lastmod>
-            <changefreq>daily</changefreq>
-            <priority>0.5</priority>
-          </url>
-           <url>
-            <loc>http://www.bbc.co.uk/news/uk-england-manchester-27098533</loc>
-            <lastmod>2014-04-20T17:25:49Z</lastmod>
-            <changefreq>daily</changefreq>
-            <priority>0.5</priority>
-          </url>
-           <url>
-            <loc>http://www.bbc.co.uk/news/uk-wales-mid-wales-27097574</loc>
-            <lastmod>2014-04-20T17:19:32Z</lastmod>
-            <changefreq>daily</changefreq>
-            <priority>0.5</priority>
-          </url>
-           <url>
-            <loc>http://www.bbc.co.uk/news/uk-wales-south-west-wales-27098313</loc>
-            <lastmod>2014-04-20T17:15:30Z</lastmod>
-            <changefreq>daily</changefreq>
-            <priority>0.5</priority>
-          </url>
-           <url>
-            <loc>http://www.bbc.co.uk/news/uk-27090737</loc>
-            <lastmod>2014-04-20T17:13:52Z</lastmod>
-            <changefreq>daily</changefreq>
-            <priority>0.5</priority>
-          </url>
-           <url>
-            <loc>http://www.bbc.co.uk/news/world-asia-27097449</loc>
-            <lastmod>2014-04-20T17:06:25Z</lastmod>
-            <changefreq>daily</changefreq>
-            <priority>0.5</priority>
-          </url>
-           <url>
-            <loc>http://www.bbc.co.uk/news/education-27094932</loc>
-            <lastmod>2014-04-21T17:24:40Z</lastmod>
-            <changefreq>daily</changefreq>
-            <priority>0.5</priority>
-          </url>
-           <url>
-            <loc>http://www.bbc.co.uk/news/world-us-canada-27098662</loc>
-            <lastmod>2014-04-20T16:55:10Z</lastmod>
-            <changefreq>daily</changefreq>
-            <priority>0.5</priority>
-          </url>
-           <url>
-            <loc>http://www.bbc.co.uk/news/27097854</loc>
-            <lastmod>2014-04-21T02:30:54Z</lastmod>
-            <changefreq>daily</changefreq>
-            <priority>0.5</priority>
-          </url>
-           <url>
-            <loc>http://www.bbc.co.uk/news/uk-england-27094376</loc>
-            <lastmod>2014-04-20T16:11:51Z</lastmod>
-            <changefreq>daily</changefreq>
-            <priority>0.5</priority>
-          </url>
-           <url>
-            <loc>http://www.bbc.co.uk/news/entertainment-arts-27097413</loc>
-            <lastmod>2014-04-20T16:23:48Z</lastmod>
-            <changefreq>daily</changefreq>
-            <priority>0.5</priority>
-          </url>
         </urlset>
     http_version: 
-  recorded_at: Wed, 23 Apr 2014 16:10:58 GMT
+  recorded_at: Wed, 23 Apr 2014 18:12:09 GMT
+- request:
+    method: get
+    uri: http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/xml
+      Last-Modified:
+      - Fri, 01 Feb 2013 20:19:30 GMT
+      Accept-Ranges:
+      - bytes
+      Etag:
+      - '"80d5d370b90ce1:0"'
+      Server:
+      - Microsoft-IIS/7.0
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Wed, 23 Apr 2014 18:12:11 GMT
+      Content-Length:
+      - '4451'
+    body:
+      encoding: UTF-8
+      string: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<xsd:schema xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"\r\n
+        \           targetNamespace=\"http://www.sitemaps.org/schemas/sitemap/0.9\"\r\n
+        \           xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\"\r\n            elementFormDefault=\"qualified\">\r\n
+        \ <xsd:annotation>\r\n    <xsd:documentation>\r\n      XML Schema for Sitemap
+        files.\r\n      Last Modifed 2008-03-26\r\n    </xsd:documentation>\r\n  </xsd:annotation>\r\n\r\n
+        \ <xsd:element name=\"urlset\">\r\n    <xsd:annotation>\r\n      <xsd:documentation>\r\n
+        \       Container for a set of up to 50,000 document elements.\r\n        This
+        is the root element of the XML file.\r\n      </xsd:documentation>\r\n    </xsd:annotation>\r\n
+        \   <xsd:complexType>\r\n      <xsd:sequence>\r\n        <xsd:any namespace=\"##other\"
+        minOccurs=\"0\" maxOccurs=\"unbounded\" processContents=\"strict\"/>\r\n        <xsd:element
+        name=\"url\" type=\"tUrl\" maxOccurs=\"unbounded\"/>\r\n      </xsd:sequence>\r\n
+        \   </xsd:complexType>\r\n  </xsd:element>\r\n\r\n  <xsd:complexType name=\"tUrl\">\r\n
+        \   <xsd:annotation>\r\n      <xsd:documentation>\r\n        Container for
+        the data needed to describe a document to crawl.\r\n      </xsd:documentation>\r\n
+        \   </xsd:annotation>\r\n    <xsd:sequence>\r\n      <xsd:element name=\"loc\"
+        type=\"tLoc\"/>\r\n      <xsd:element name=\"lastmod\" type=\"tLastmod\" minOccurs=\"0\"/>\r\n
+        \     <xsd:element name=\"changefreq\" type=\"tChangeFreq\" minOccurs=\"0\"/>\r\n
+        \     <xsd:element name=\"priority\" type=\"tPriority\" minOccurs=\"0\"/>\r\n
+        \     <xsd:any namespace=\"##other\" minOccurs=\"0\" maxOccurs=\"unbounded\"
+        processContents=\"strict\"/>\r\n    </xsd:sequence>\r\n  </xsd:complexType>\r\n\r\n
+        \ <xsd:simpleType name=\"tLoc\">\r\n    <xsd:annotation>\r\n      <xsd:documentation>\r\n
+        \       REQUIRED: The location URI of a document.\r\n        The URI must
+        conform to RFC 2396 (http://www.ietf.org/rfc/rfc2396.txt).\r\n      </xsd:documentation>\r\n
+        \   </xsd:annotation>\r\n    <xsd:restriction base=\"xsd:anyURI\">\r\n      <xsd:minLength
+        value=\"12\"/>\r\n      <xsd:maxLength value=\"2048\"/>\r\n    </xsd:restriction>\r\n
+        \ </xsd:simpleType>\r\n\r\n  <xsd:simpleType name=\"tLastmod\">\r\n    <xsd:annotation>\r\n
+        \     <xsd:documentation>\r\n        OPTIONAL: The date the document was last
+        modified. The date must conform\r\n        to the W3C DATETIME format (http://www.w3.org/TR/NOTE-datetime).\r\n
+        \       Example: 2005-05-10\r\n        Lastmod may also contain a timestamp.\r\n
+        \       Example: 2005-05-10T17:33:30+08:00\r\n      </xsd:documentation>\r\n
+        \   </xsd:annotation>\r\n    <xsd:union>\r\n      <xsd:simpleType>\r\n        <xsd:restriction
+        base=\"xsd:date\"/>\r\n      </xsd:simpleType>\r\n      <xsd:simpleType>\r\n
+        \       <xsd:restriction base=\"xsd:dateTime\"/>\r\n      </xsd:simpleType>\r\n
+        \   </xsd:union>\r\n  </xsd:simpleType>\r\n\r\n  <xsd:simpleType name=\"tChangeFreq\">\r\n
+        \   <xsd:annotation>\r\n      <xsd:documentation>\r\n        OPTIONAL: Indicates
+        how frequently the content at a particular URL is\r\n        likely to change.
+        The value \"always\" should be used to describe\r\n        documents that
+        change each time they are accessed. The value \"never\"\r\n        should
+        be used to describe archived URLs. Please note that web\r\n        crawlers
+        may not necessarily crawl pages marked \"always\" more often.\r\n        Consider
+        this element as a friendly suggestion and not a command.\r\n      </xsd:documentation>\r\n
+        \   </xsd:annotation>\r\n    <xsd:restriction base=\"xsd:string\">\r\n      <xsd:enumeration
+        value=\"always\"/>\r\n      <xsd:enumeration value=\"hourly\"/>\r\n      <xsd:enumeration
+        value=\"daily\"/>\r\n      <xsd:enumeration value=\"weekly\"/>\r\n      <xsd:enumeration
+        value=\"monthly\"/>\r\n      <xsd:enumeration value=\"yearly\"/>\r\n      <xsd:enumeration
+        value=\"never\"/>\r\n    </xsd:restriction>\r\n  </xsd:simpleType>\r\n\r\n
+        \ <xsd:simpleType name=\"tPriority\">\r\n    <xsd:annotation>\r\n      <xsd:documentation>\r\n
+        \       OPTIONAL: The priority of a particular URL relative to other pages\r\n
+        \       on the same site. The value for this element is a number between\r\n
+        \       0.0 and 1.0 where 0.0 identifies the lowest priority page(s).\r\n
+        \       The default priority of a page is 0.5. Priority is used to select\r\n
+        \       between pages on your site. Setting a priority of 1.0 for all URLs\r\n
+        \       will not help you, as the relative priority of pages on your site\r\n
+        \       is what will be considered.\r\n      </xsd:documentation>\r\n    </xsd:annotation>\r\n
+        \   <xsd:restriction base=\"xsd:decimal\">\r\n      <xsd:minInclusive value=\"0.0\"/>\r\n
+        \     <xsd:maxInclusive value=\"1.0\"/>\r\n    </xsd:restriction>\r\n  </xsd:simpleType>\r\n\r\n</xsd:schema>\r\n"
+    http_version: 
+  recorded_at: Wed, 23 Apr 2014 18:12:09 GMT
 recorded_with: VCR 2.8.0

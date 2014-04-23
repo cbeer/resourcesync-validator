@@ -78,6 +78,38 @@ class Sitemap
     end
   end
   
+  def schema_valid?
+    sitemap_valid? && resync_valid? 
+  end
+  
+  def sitemap_valid?
+    sitemap_schema.valid? doc
+  end
+  
+  def resync_valid?
+    resync_schema.valid? doc
+  end
+  
+  def sitemap_validation_errors
+    @sitemap_validation_errors ||= sitemap_schema.validate doc
+  end
+
+  def resync_validation_errors
+    @resync_validation_errors ||= resync_schema.validate doc
+  end
+  
+  def sitemap_schema
+    if index?
+      $sitemap_index_schema ||= Nokogiri::XML::Schema(Faraday.get("http://www.sitemaps.org/schemas/sitemap/0.9/siteindex.xsd").body)
+    else
+      $sitemap_schema ||= Nokogiri::XML::Schema(Faraday.get("http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd").body)
+    end
+  end
+  
+  def resync_schema
+    $resync_schema ||= Nokogiri::XML::Schema(Faraday.get("http://www.openarchives.org/rs/0.9.1/resourcesync.xsd").body)
+  end
+  
   def urls
     doc.xpath("//sm:url", sm: xmlns).map do |s|
       OpenStruct.new({doc: s}.merge(Hash[s.children.map { |n| [n.name,n.inner_text]}]))

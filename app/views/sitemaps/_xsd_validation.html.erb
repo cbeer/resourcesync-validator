@@ -1,0 +1,25 @@
+<h3>Schema Validation</h3>
+<dl class="dl-horizontal">
+  <dt>Sitemap</dt>
+  <dd>
+<% if @sitemap.sitemap_valid? %>
+  <span class="label label-success">Valid</span>
+<% else %>
+  <% @sitemap.sitemap_validation_errors.each do |e| %>
+    <%= e %>
+  <% end %>
+<% end %>
+  </dd>
+
+  <dt>Resource Sync</dt>
+  <dd>
+  <% if @sitemap.resync_valid? %>
+    <span class="label label-success">Valid</span>
+  <% else %>
+    <% @sitemap.resync_validation_errors.each do |e| %>
+      <%= e %>
+    <% end %>
+  <% end %>
+  </dd>
+
+</dl>

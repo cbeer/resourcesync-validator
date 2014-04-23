@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 23 Apr 2014 16:10:56 GMT
+      - Wed, 23 Apr 2014 18:11:35 GMT
       Server:
       - Apache
       Last-Modified:
@@ -45,5 +45,175 @@ http_interactions:
         v5s0ircPNcjeZVGGoc+F8lWioIwe3LrRdCzHhGSYZoTeyLU4n4ocQ0ovd8+N
         jJCPvgr8WMbIQxxa/KPCZ9x/ypI3XfTpc3kBAAA=
     http_version: 
-  recorded_at: Wed, 23 Apr 2014 16:10:56 GMT
+  recorded_at: Wed, 23 Apr 2014 18:11:35 GMT
+- request:
+    method: get
+    uri: http://www.sitemaps.org/schemas/sitemap/0.9/siteindex.xsd
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/xml
+      Last-Modified:
+      - Fri, 01 Feb 2013 20:18:24 GMT
+      Accept-Ranges:
+      - bytes
+      Etag:
+      - '"536b7649b90ce1:0"'
+      Server:
+      - Microsoft-IIS/7.0
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Wed, 23 Apr 2014 18:11:37 GMT
+      Content-Length:
+      - '2591'
+    body:
+      encoding: UTF-8
+      string: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<xsd:schema xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"\r\n
+        \           targetNamespace=\"http://www.sitemaps.org/schemas/sitemap/0.9\"\r\n
+        \           xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\"\r\n            elementFormDefault=\"qualified\">\r\n
+        \ <xsd:annotation>\r\n    <xsd:documentation>\r\n      XML Schema for Sitemap
+        index files.\r\n      Last Modifed 2009-04-08\r\n    </xsd:documentation>\r\n
+        \ </xsd:annotation>\r\n\r\n  <xsd:element name=\"sitemapindex\">\r\n    <xsd:annotation>\r\n
+        \     <xsd:documentation>\r\n        Container for a set of up to 50,000 sitemap
+        URLs.\r\n        This is the root element of the XML file.\r\n      </xsd:documentation>\r\n
+        \   </xsd:annotation>\r\n    <xsd:complexType>\r\n      <xsd:sequence>\r\n
+        \       <xsd:any namespace=\"##other\" minOccurs=\"0\" maxOccurs=\"unbounded\"
+        processContents=\"strict\"/>\r\n        <xsd:element name=\"sitemap\" type=\"tSitemap\"
+        maxOccurs=\"unbounded\"/>\r\n      </xsd:sequence>\r\n    </xsd:complexType>\r\n
+        \ </xsd:element>\r\n\r\n  <xsd:complexType name=\"tSitemap\">\r\n    <xsd:annotation>\r\n
+        \     <xsd:documentation>\r\n        Container for the data needed to describe
+        a sitemap.\r\n      </xsd:documentation>\r\n    </xsd:annotation>\r\n    <xsd:sequence>\r\n
+        \     <xsd:element name=\"loc\" type=\"tLocSitemap\"/>\r\n      <xsd:element
+        name=\"lastmod\" type=\"tLastmodSitemap\" minOccurs=\"0\"/>\r\n      <xsd:any
+        namespace=\"##other\" minOccurs=\"0\" maxOccurs=\"unbounded\" processContents=\"strict\"/>\r\n
+        \   </xsd:sequence>\r\n  </xsd:complexType>\r\n\r\n  <xsd:simpleType name=\"tLocSitemap\">\r\n
+        \   <xsd:annotation>\r\n      <xsd:documentation>\r\n        REQUIRED: The
+        location URI of a sitemap.\r\n        The URI must conform to RFC 2396 (http://www.ietf.org/rfc/rfc2396.txt).\r\n
+        \     </xsd:documentation>\r\n    </xsd:annotation>\r\n    <xsd:restriction
+        base=\"xsd:anyURI\">\r\n      <xsd:minLength value=\"12\"/>\r\n      <xsd:maxLength
+        value=\"2048\"/>\r\n    </xsd:restriction>\r\n  </xsd:simpleType>\r\n\r\n
+        \ <xsd:simpleType name=\"tLastmodSitemap\">\r\n    <xsd:annotation>\r\n      <xsd:documentation>\r\n
+        \       OPTIONAL: The date the document was last modified. The date must conform\r\n
+        \       to the W3C DATETIME format (http://www.w3.org/TR/NOTE-datetime).\r\n
+        \       Example: 2005-05-10\r\n        Lastmod may also contain a timestamp.\r\n
+        \       Example: 2005-05-10T17:33:30+08:00\r\n      </xsd:documentation>\r\n
+        \   </xsd:annotation>\r\n    <xsd:union>\r\n      <xsd:simpleType>\r\n        <xsd:restriction
+        base=\"xsd:date\"/>\r\n      </xsd:simpleType>\r\n      <xsd:simpleType>\r\n
+        \       <xsd:restriction base=\"xsd:dateTime\"/>\r\n      </xsd:simpleType>\r\n
+        \   </xsd:union>\r\n  </xsd:simpleType>\r\n\r\n\r\n</xsd:schema>\r\n"
+    http_version: 
+  recorded_at: Wed, 23 Apr 2014 18:11:44 GMT
+- request:
+    method: get
+    uri: http://www.openarchives.org/rs/0.9.1/resourcesync.xsd
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 23 Apr 2014 18:11:46 GMT
+      Server:
+      - Apache/2.2.3 (Red Hat)
+      Last-Modified:
+      - Thu, 15 Aug 2013 16:30:42 GMT
+      Etag:
+      - '"5504cf-139c-4e3fefebf7080"'
+      Accept-Ranges:
+      - bytes
+      Content-Length:
+      - '5020'
+      Connection:
+      - close
+      Content-Type:
+      - text/xml
+    body:
+      encoding: UTF-8
+      string: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<xsd:schema xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"\n
+        \           targetNamespace=\"http://www.openarchives.org/rs/terms/\"\n            xmlns=\"http://www.openarchives.org/rs/terms/\"\n
+        \           elementFormDefault=\"qualified\">\n\n<xsd:annotation>\n<xsd:documentation>\nXML
+        Schema for ResoureSync extensions to Sitemap files.\nSee: http://www.openarchives.org/rs/
+        .\n2013-01-06 first stab [Simeon Warner],\n2013-08-15 for v0.9.1 [Simeon Warner].\n</xsd:documentation>\n</xsd:annotation>\n\n
+        \ <xsd:element name=\"md\">\n    <xsd:annotation>\n      <xsd:documentation>\n\tMetadata
+        about a resource\n      </xsd:documentation>\n    </xsd:annotation>\n    <xsd:complexType>\n
+        \     <xsd:complexContent>\n        <xsd:restriction base=\"xsd:anyType\">\n
+        \         <xsd:attribute name=\"at\" type=\"xsd:dateTime\"/>\n          <xsd:attribute
+        name=\"capability\" type=\"xsd:string\"/>\n          <xsd:attribute name=\"change\"
+        type=\"changeType\"/>\n          <xsd:attribute name=\"completed\" type=\"xsd:dateTime\"/>\n
+        \         <xsd:attribute name=\"encoding\" type=\"xsd:string\"/>\n          <xsd:attribute
+        name=\"from\" type=\"xsd:dateTime\"/>\n          <xsd:attribute name=\"hash\"
+        type=\"xsd:string\"/>\n          <xsd:attribute name=\"length\" type=\"xsd:integer\"/>\n
+        \         <xsd:attribute name=\"modified\" type=\"xsd:dateTime\"/>\n          <xsd:attribute
+        name=\"path\" type=\"pathType\"/>\n          <xsd:attribute name=\"type\"
+        type=\"contentType\"/>\n          <xsd:attribute name=\"until\" type=\"xsd:dateTime\"/>\n\t
+        \ <xsd:anyAttribute namespace=\"##other\" processContents=\"lax\"/>\n        </xsd:restriction>\n
+        \     </xsd:complexContent>\n    </xsd:complexType>\n  </xsd:element>\n\n
+        \ <xsd:element name=\"ln\">\n    <xsd:annotation>\n      <xsd:documentation>\n\tLinks
+        to related resources\n      </xsd:documentation>\n    </xsd:annotation>\n
+        \   <xsd:complexType>\n      <xsd:complexContent>\n        <xsd:restriction
+        base=\"xsd:anyType\">\n          <xsd:attribute name=\"encoding\" type=\"xsd:string\"/>\n
+        \         <xsd:attribute name=\"hash\" type=\"xsd:string\"/>\n          <xsd:attribute
+        name=\"href\" type=\"xsd:anyURI\"/>\n          <xsd:attribute name=\"length\"
+        type=\"xsd:nonNegativeInteger\"/>\n          <xsd:attribute name=\"modified\"
+        type=\"xsd:dateTime\"/>\n          <xsd:attribute name=\"path\" type=\"pathType\"/>\n
+        \         <xsd:attribute name=\"pri\" type=\"priType\"/>\n          <xsd:attribute
+        name=\"rel\" type=\"relType\"/>\n          <xsd:attribute name=\"type\" type=\"contentType\"/>\n\t
+        \ <xsd:anyAttribute namespace=\"##other\" processContents=\"lax\"/>\n        </xsd:restriction>\n
+        \     </xsd:complexContent>\n    </xsd:complexType>\n  </xsd:element>\n\n
+        \ <xsd:simpleType name=\"changeType\">\n    <xsd:annotation>\n      <xsd:documentation>\n
+        \       Allowed values of the change attribute are\n\tcreated, updated, deleted\n
+        \     </xsd:documentation>\n    </xsd:annotation>\n    <xsd:restriction base=\"xsd:string\">\n
+        \     <xsd:enumeration value=\"created\"/>\n      <xsd:enumeration value=\"updated\"/>\n
+        \     <xsd:enumeration value=\"deleted\"/>\n    </xsd:restriction>\n  </xsd:simpleType>\n\n
+        \ <xsd:simpleType name=\"pathType\">\n    <xsd:annotation>\n      <xsd:documentation>\n
+        \       Path values must start with a slash, must not end with a slash\n      </xsd:documentation>\n
+        \   </xsd:annotation>\n    <xsd:restriction base=\"xsd:string\">\n      <xsd:pattern
+        value=\"/.*[^/]\"/>\n    </xsd:restriction>\n  </xsd:simpleType>\n\n  <xsd:simpleType
+        name=\"contentType\">\n    <xsd:annotation>\n      <xsd:documentation>\n        MIME
+        Content Types are described in RFCs 2045,2046\n        http://tools.ietf.org/html/rfc2045\n
+        \       http://tools.ietf.org/html/rfc2046\n      </xsd:documentation>\n    </xsd:annotation>\n
+        \   <xsd:restriction base=\"xsd:string\">\n      <xsd:pattern value=\"[\\w-]+/[\\w-]+\"/>\n
+        \   </xsd:restriction>\n  </xsd:simpleType>\n\n  <xsd:simpleType name=\"priType\">\n
+        \   <xsd:annotation>\n      <xsd:documentation>\n        The priority attribute
+        may have values 1 through 999999\n      </xsd:documentation>\n    </xsd:annotation>\n
+        \   <xsd:restriction base=\"xsd:integer\">\n      <xsd:minInclusive value=\"1\"/>\n
+        \     <xsd:maxInclusive value=\"999999\"/>\n    </xsd:restriction>\n  </xsd:simpleType>\n\n
+        \ <xsd:simpleType name=\"relType\">\n    <xsd:annotation>\n      <xsd:documentation>\n\tSyntax
+        for link relation values is specified by\n\thttp://tools.ietf.org/html/rfc5988
+        and the relevant\n\tportion is:\n\n\t# link-param     = ( ( \"rel\" \"=\"
+        relation-types )\n\t#\t           ... \n\t# relation-type  = reg-rel-type
+        | ext-rel-type \n\t# reg-rel-type   = LOALPHA *( LOALPHA | DIGIT | \".\" |
+        \"-\" ) \n\t# ext-rel-type   = URI\n\t#\n\n\tRegistered link relations (reg-rel-type)
+        are listed at\n\thttp://www.iana.org/assignments/link-relations/link-relations.xhtml\n\tand
+        URIs are allowed for extension (ext-rel-type)\n      </xsd:documentation>\n
+        \   </xsd:annotation>\n    <xsd:union>\n      <xsd:simpleType>\n\t<xsd:restriction
+        base=\"xsd:string\">\n          <xsd:pattern value=\"[a-z][a-z0-9\\.\\-]*\"/>\n
+        \       </xsd:restriction>\n      </xsd:simpleType>\n      <xsd:simpleType>\n\t<xsd:restriction
+        base=\"xsd:anyURI\"/>\n      </xsd:simpleType>\n    </xsd:union>\n  </xsd:simpleType>\n\n</xsd:schema>\n"
+    http_version: 
+  recorded_at: Wed, 23 Apr 2014 18:11:45 GMT
 recorded_with: VCR 2.8.0

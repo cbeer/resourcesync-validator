@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 23 Apr 2014 16:10:57 GMT
+      - Wed, 23 Apr 2014 18:11:47 GMT
       Server:
       - Apache
       Last-Modified:
@@ -76,5 +76,5 @@ http_interactions:
 
         </sitemapindex>
     http_version: 
-  recorded_at: Wed, 23 Apr 2014 16:10:57 GMT
+  recorded_at: Wed, 23 Apr 2014 18:11:46 GMT
 recorded_with: VCR 2.8.0
