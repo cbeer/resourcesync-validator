@@ -112,7 +112,24 @@ class Sitemap
   
   def urls
     doc.xpath("//sm:url", sm: xmlns).map do |s|
-      OpenStruct.new({doc: s}.merge(Hash[s.children.map { |n| [n.name,n.inner_text]}]))
+      h = {}
+      s.children.each do |n| 
+        if n.inner_text.blank? && n.attributes.any?
+          h[n.name] ||= []
+          h[n.name] << Hash[n.attributes.map { |k,v| [k,v.to_s] }]
+        else
+          h[n.name] = n.inner_text
+        end
+      end
+      OpenStruct.new({doc: s}.merge(h))
     end
+  end
+  
+  def md
+    doc.root.xpath("rs:md", rs: "http://www.openarchives.org/rs/terms/").map { |x| Hash[x.attributes.map { |k,v| [k, v.to_s]}] }
+  end
+  
+  def ln
+    doc.root.xpath("rs:ln", rs: "http://www.openarchives.org/rs/terms/").map { |x| Hash[x.attributes.map { |k,v| [k, v.to_s]}] }
   end
 end

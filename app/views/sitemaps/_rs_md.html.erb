@@ -1,17 +1,19 @@
-<% object.md.each do |m| %>
+<dl class="dl-horizontal">
+<% @sitemap.md.each do |m| %>
 <dt>md</dt>
 <dd>
   <% m.each do |k,v| %>
     <div><%= k %>: <%= v %></div>
   <% end %>
 </dd>
-<% end if object.respond_to? :md %>
+<% end %>
 
-<% object.ln.each do |m| %>
+<% @sitemap.ln.each do |m| %>
 <dt>ln</dt>
 <dd>
   <% m.each do |k,v| %>
     <div><%= k %>: <%= v %></div>
   <% end %>
 </dd>
-<% end if object.respond_to? :ln  %>
+<% end %>
+</dl>
