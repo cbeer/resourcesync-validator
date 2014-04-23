@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://openvault.wgbh.org/sitemap.xml.gz
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 23 Apr 2014 16:10:56 GMT
+      Server:
+      - Apache
+      Last-Modified:
+      - Sat, 18 Jun 2011 22:05:21 GMT
+      Etag:
+      - '"3584d2-d1-b2c1ca40"'
+      Accept-Ranges:
+      - bytes
+      Content-Type:
+      - application/x-gzip
+      Vary:
+      - Accept-Encoding
+      Content-Length:
+      - '232'
+      Connection:
+      - close
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sICCEh/U0AA3NpdGVtYXAueG1sAK1QSw6DIBDdewriXj62Ia1RvERX3aES
+        NEUwQtX09AWDTbdNups3836Zst5GBRYx28HoKiUQpzVLSjs4MfJp0J3YgGdo
+        W6W9c1OB0LquMJ4tNLNEtu09sCguEYbXlCUAHCZh9kiZlkULMwm98KdycJVN
+        v5s0ircPNcjeZVGGoc+F8lWioIwe3LrRdCzHhGSYZoTeyLU4n4ocQ0ovd8+N
+        jJCPvgr8WMbIQxxa/KPCZ9x/ypI3XfTpc3kBAAA=
+    http_version: 
+  recorded_at: Wed, 23 Apr 2014 16:10:56 GMT
+recorded_with: VCR 2.8.0

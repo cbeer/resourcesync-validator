@@ -46,3 +46,10 @@ end
 gem 'nokogiri'
 gem 'bootstrap-sass'
 gem 'faraday'
+
+group :test do
+  gem 'vcr'
+  gem 'webmock'
+  gem 'rspec-rails'
+  gem 'capybara'
+end

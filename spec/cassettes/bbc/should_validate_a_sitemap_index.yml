@@ -1,0 +1,80 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www.bbc.co.uk/sitemap.xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 23 Apr 2014 16:10:57 GMT
+      Server:
+      - Apache
+      Last-Modified:
+      - Thu, 21 Nov 2013 14:17:15 GMT
+      Accept-Ranges:
+      - bytes
+      Content-Length:
+      - '2786'
+      Content-Type:
+      - text/xml
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8"?>
+        <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/siteindex.xsd">
+
+        <sitemap><loc>http://www.bbc.co.uk/news/sitemap.xml</loc></sitemap>
+
+        <sitemap><loc>http://www.bbc.co.uk/bbcaudiositemap.xml</loc><lastmod>2011-03-03</lastmod></sitemap>
+        <sitemap><loc>http://www.bbc.co.uk/bbcvisionsitemap.xml</loc><lastmod>2013-11-21</lastmod></sitemap>
+        <sitemap><loc>http://www.bbc.co.uk/bbcfuturemediasitemap.xml</loc><lastmod>2011-01-25</lastmod></sitemap>
+
+        <sitemap><loc>http://www.bbc.co.uk/sport/sitemap.xml</loc></sitemap>
+        <sitemap><loc>http://www.bbc.co.uk/tv/comingup/comingup_sitemap.xml</loc></sitemap>
+        <sitemap><loc>http://www.bbc.co.uk/iplayer/sitemap.xml.gz</loc></sitemap>
+        <sitemap><loc>http://www.bbc.co.uk/music/sitemap.xml.gz</loc></sitemap>
+
+        <sitemap><loc>http://www.bbc.co.uk/aboutthebbc/sitemap.xml</loc></sitemap>
+        <sitemap><loc>http://www.bbc.co.uk/afrique/sitemap.xml</loc></sitemap>
+        <sitemap><loc>http://www.bbc.co.uk/arabic/sitemap.xml</loc></sitemap>
+        <sitemap><loc>http://www.bbc.co.uk/bengali/sitemap.xml</loc></sitemap>
+        <sitemap><loc>http://www.bbc.co.uk/burmese/sitemap.xml</loc></sitemap>
+        <sitemap><loc>http://www.bbc.co.uk/gahuza/sitemap.xml</loc></sitemap>
+        <sitemap><loc>http://www.bbc.co.uk/hausa/sitemap.xml</loc></sitemap>
+        <sitemap><loc>http://www.bbc.co.uk/hindi/sitemap.xml</loc></sitemap>
+        <sitemap><loc>http://www.bbc.co.uk/indonesia/sitemap.xml</loc></sitemap>
+        <sitemap><loc>http://www.bbc.co.uk/mundo/sitemap.xml</loc></sitemap>
+        <sitemap><loc>http://www.bbc.co.uk/pashto/sitemap.xml</loc></sitemap>
+        <sitemap><loc>http://www.bbc.co.uk/persian/sitemap.xml</loc></sitemap>
+        <sitemap><loc>http://www.bbc.co.uk/portuguese/sitemap.xml</loc></sitemap>
+        <sitemap><loc>http://www.bbc.co.uk/russian/sitemap.xml</loc></sitemap>
+        <sitemap><loc>http://www.bbc.co.uk/swahili/sitemap.xml</loc></sitemap>
+        <sitemap><loc>http://www.bbc.co.uk/tajik/sitemap.xml</loc></sitemap>
+        <sitemap><loc>http://www.bbc.co.uk/turkce/sitemap.xml</loc></sitemap>
+        <sitemap><loc>http://www.bbc.co.uk/ukchina/simp/sitemap.xml</loc></sitemap>
+        <sitemap><loc>http://www.bbc.co.uk/ukrainian/sitemap.xml</loc></sitemap>
+        <sitemap><loc>http://www.bbc.co.uk/urdu/sitemap.xml</loc></sitemap>
+        <sitemap><loc>http://www.bbc.co.uk/uzbek/sitemap.xml</loc></sitemap>
+        <sitemap><loc>http://www.bbc.co.uk/vietnamese/sitemap.xml</loc></sitemap>
+        <sitemap><loc>http://www.bbc.co.uk/zhongwen/simp/sitemap.xml</loc></sitemap>
+        <sitemap><loc>http://www.bbc.co.uk/zhongwen/trad/sitemap.xml</loc></sitemap>
+
+        <sitemap><loc>http://www.bbc.co.uk/news/business/market_data/sitemap.xml</loc></sitemap>
+
+        </sitemapindex>
+    http_version: 
+  recorded_at: Wed, 23 Apr 2014 16:10:57 GMT
+recorded_with: VCR 2.8.0
