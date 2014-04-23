@@ -1,7 +1,16 @@
-<%= render 'form' %>
+<div class="row">
+  <div class="col-md-12">
+    <h2>Download, validate and evaluate sitemaps</h2>
+    <%= render 'form' %>
+  </div>
+</div>
 
-<h2>Examples</h2>
-<ul>
-  <li><%= link_to 'BBC.co.uk', validate_sitemap_url(sitemap: { url: 'http://www.bbc.co.uk/sitemap.xml'}) %></li>
-  <li><%= link_to 'openvault.wgbh.org', validate_sitemap_url(sitemap: { url: 'http://openvault.wgbh.org/sitemap.xml.gz'}) %></li>
-</ul>
+<div class="row">
+  <div class="col-md-12">
+    <h2>Examples</h2>
+    <ul>
+      <li><%= link_to 'BBC.co.uk', validate_sitemap_url(sitemap: { url: 'http://www.bbc.co.uk/sitemap.xml'}) %></li>
+      <li><%= link_to 'openvault.wgbh.org', validate_sitemap_url(sitemap: { url: 'http://openvault.wgbh.org/sitemap.xml.gz'}) %></li>
+    </ul>
+  </div>
+</div>
