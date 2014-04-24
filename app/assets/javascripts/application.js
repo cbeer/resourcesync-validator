@@ -15,6 +15,7 @@
 //= require turbolinks
 //= require bootstrap
 //= require ace/ace
+//= require ace/mode-xml
 //= require_tree .
 
 $(function() { 
