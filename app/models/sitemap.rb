@@ -160,4 +160,8 @@ class Sitemap
   def ln
     doc.root.xpath("rs:ln", rs: "http://www.openarchives.org/rs/terms/").map { |x| Hash[x.attributes.map { |k,v| [k, v.to_s]}] }
   end
+  
+  def length
+    urls.length + sitemaps.length
+  end
 end
