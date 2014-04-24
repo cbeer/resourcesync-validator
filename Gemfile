@@ -46,6 +46,7 @@ end
 gem 'nokogiri'
 gem 'bootstrap-sass'
 gem 'faraday'
+gem 'ace-rails-ap'
 
 group :test do
   gem 'vcr'

@@ -14,4 +14,11 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
+//= require ace/ace
 //= require_tree .
+
+$(function() { 
+    var editor = ace.edit("editor");
+    editor.getSession().setMode("ace/mode/xml");
+    editor.setReadOnly(true); 
+});

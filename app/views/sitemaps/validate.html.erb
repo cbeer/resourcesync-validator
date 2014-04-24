@@ -1,25 +1,36 @@
-  <%= link_to "View Source", @sitemap.url, class: 'pull-right btn btn-default' %>
 
-<div class="col-md-12">
-  <%= render 'http' %>
-</div>
-<div class="col-md-12">
-<%= render 'xsd_validation' %>
-</div>
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#validation" data-toggle="tab">Validation</a></li>
+  <li><a href="#source" data-toggle="tab">Source</a></li>
+</ul>
 
-<div class="col-md-12">
-<%= render 'rs_md' %>
-</div>
+<div class="tab-content">
+  <div class="tab-pane active" id="validation">
+    <div class="col-md-12">
+      <%= render 'http' %>
+    </div>
+    <div class="col-md-12">
+    <%= render 'xsd_validation' %>
+    </div>
 
-<div class="col-md-12">
-  <% case %>
-  <% when @sitemap.capabilitylist? %>
-    <%= render 'capabilitylist' %>
-  <% when @sitemap.changelist? %>
-    <%= render 'changelist' %>
-  <% when @sitemap.resourcelist? %>
-    <%= render 'resourcelist' %>
-  <% else %>
-    <%= render 'urls_or_sitemaps' %>
-  <% end %>
+    <div class="col-md-12">
+    <%= render 'rs_md' %>
+    </div>
+
+      <div class="col-md-12">
+        <% case %>
+        <% when @sitemap.capabilitylist? %>
+          <%= render 'capabilitylist' %>
+        <% when @sitemap.changelist? %>
+          <%= render 'changelist' %>
+        <% when @sitemap.resourcelist? %>
+          <%= render 'resourcelist' %>
+        <% else %>
+          <%= render 'urls_or_sitemaps' %>
+        <% end %>
+      </div>
+    </div>
+    <div class="tab-pane" id="source">
+      <div id="editor"><%= @sitemap.doc.to_s %></div>
+    </div>
 </div>
