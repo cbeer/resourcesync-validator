@@ -18,8 +18,13 @@
 //= require ace/mode-xml
 //= require_tree .
 
-$(function() { 
+(function($) { 
+  function load_ace_editor() {
     var editor = ace.edit("editor");
     editor.getSession().setMode("ace/mode/xml");
     editor.setReadOnly(true); 
-});
+  }
+
+  $(document).ready(load_ace_editor);
+  $(document).on("page:load", load_ace_editor);
+})(jQuery);
