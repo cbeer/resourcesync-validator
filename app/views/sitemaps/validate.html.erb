@@ -17,9 +17,14 @@
 </div>
 
 <div class="col-md-12">
-<% if @sitemap.index? %>
-  <%= render 'index' %>
-<% else %>
-  <%= render 'urlset' %>
-<% end %>
+  <% case %>
+  <% when @sitemap.capabilitylist? %>
+    <%= render 'capabilitylist' %>
+  <% when @sitemap.changelist? %>
+    <%= render 'changelist' %>
+  <% when @sitemap.resourcelist? %>
+    <%= render 'resourcelist' %>
+  <% else %>
+    <%= render 'urls_or_sitemaps' %>
+  <% end %>
 </div>

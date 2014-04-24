@@ -15,6 +15,10 @@ class Sitemap
   
   def initialize_by_url options
     @url = options[:url]
+    
+    unless @url.starts_with? 'http'
+      @url = "http://#{@url}"
+    end
   end
   
   def content
@@ -58,6 +62,22 @@ class Sitemap
   
   def valid?
     !!content
+  end
+  
+  def resourcesync?
+    doc.root.xpath('rs:md[@capability]', rs: "http://www.openarchives.org/rs/terms/").any?
+  end
+  
+  def changelist?
+    doc.root.xpath('rs:md[@capability="changelist"]', rs: "http://www.openarchives.org/rs/terms/").any?
+  end
+  
+  def capabilitylist?
+    doc.root.xpath('rs:md[@capability="capabilitylist"]', rs: "http://www.openarchives.org/rs/terms/").any?
+  end
+  
+  def resourcelist?
+    doc.root.xpath('rs:md[@capability="resourcelist"]', rs: "http://www.openarchives.org/rs/terms/").any?
   end
   
   def xmlns
