@@ -9,11 +9,29 @@
     <% end %>
   </dd>
 
+  <dt>Content type</dt>
+  <dd>
+    <% if @sitemap.response.headers['Content-Type'] == "application/xml" %>
+    <%= content_tag :span, @sitemap.response.headers['Content-Type'], class: 'label label-success' %>
+    <% else %>
+    <%= content_tag :span, @sitemap.response.headers['Content-Type'], class: 'label label-warning' %>
+    <% end %>
+  </dd>
+  
   <dt>Response size</dt>
   <dd>
     <%= number_to_human_size @sitemap.response.body.length %>
   </dd>
 
   <dt>Response time</dt>
-  <dd><%= @sitemap.timing %>s</dd>
+  <dd>
+    <% if @sitemap.timing < 2 %>
+    <%= content_tag :span, "#{@sitemap.timing}s", class: 'label label-success' %>
+    <% elsif @sitemap.timing < 10 %>
+    <%= content_tag :span, "#{@sitemap.timing}s", class: 'label label-warning' %>
+    <% else %>
+    <%= content_tag :span, "#{@sitemap.timing}s", class: 'label label-danger' %>
+    <% end %>
+  </dd>
+  
 </dl>
