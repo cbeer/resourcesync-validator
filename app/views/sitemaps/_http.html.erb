@@ -11,18 +11,13 @@
 
   <dt>Content type</dt>
   <dd>
-    <% if @sitemap.response.headers['Content-Type'] == "application/xml" %>
+    <% if ["application/xml", "text/xml"].include? @sitemap.response.headers['Content-Type'] %>
     <%= content_tag :span, @sitemap.response.headers['Content-Type'], class: 'label label-success' %>
     <% else %>
     <%= content_tag :span, @sitemap.response.headers['Content-Type'], class: 'label label-warning' %>
     <% end %>
   </dd>
   
-  <dt>Response size</dt>
-  <dd>
-    <%= number_to_human_size @sitemap.response.body.length %>
-  </dd>
-
   <dt>Response time</dt>
   <dd>
     <% if @sitemap.timing < 2 %>
@@ -33,5 +28,23 @@
     <%= content_tag :span, "#{@sitemap.timing}s", class: 'label label-danger' %>
     <% end %>
   </dd>
+
+  <dt>Response size</dt>
+  <dd>
+    <% if @sitemap.response.body.length < 10.megabytes %>
+    <%= content_tag :span, number_to_human_size(@sitemap.response.body.length), class: 'label label-success' %>
+    <% else %>
+    <%= content_tag :span, number_to_human_size(@sitemap.response.body.length), class: 'label label-danger' %>
+    <% end %>
+  </dd>
+
   
+  <dt>Response items</dt>
+  <dd>
+    <% if (@sitemap.urls.length + @sitemap.sitemaps.length) <= 50000 %>
+    <%= content_tag :span, number_with_delimiter(@sitemap.urls.length + @sitemap.sitemaps.length), class: 'label label-success' %>
+    <% else %>
+    <%= content_tag :span, number_with_delimiter(@sitemap.urls.length + @sitemap.sitemaps.length), class: 'label label-danger' %>
+    <% end %>
+  </dd>
 </dl>
