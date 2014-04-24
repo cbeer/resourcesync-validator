@@ -1,4 +1,4 @@
-<%= form_for @sitemap, url: validate_sitemap_url, html: { class: 'navbar-left' } do |f| %>
+<%= form_for @sitemap, method: "GET", url: validate_sitemap_url, html: { class: 'navbar-left' } do |f| %>
   <div class="input-group">
     <%= f.text_field :url, class: 'form-control', placeholder: 'URL...' %>
     <div class="input-group-btn">
