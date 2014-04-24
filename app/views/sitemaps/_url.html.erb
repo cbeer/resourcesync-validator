@@ -1,5 +1,12 @@
 <li class="url">
-  <h4 class="loc"><%= link_to url.loc, url.loc %></h4>
+  <h4 class="loc">
+    <% if url["md"] and url["md"].any? { |x| x["capability"].present? } %>
+      <%= link_to url.loc, validate_sitemap_path(sitemap: { url: url.loc}) %>
+      <small><%= link_to "[xml]", url.loc %></small>
+    <% else %>
+      <%= link_to url.loc, url.loc %>
+    <% end %>
+  </h4>
   
   <dl class="dl-horizontal">
     <%= render 'common_core', object: url %>

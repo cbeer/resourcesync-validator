@@ -36,8 +36,14 @@ class Sitemap
   
   def response
     @response ||= recording_timing_information(:@timing) do
-      Faraday.get @url
+      discover_and_fetch_sitemap @url
     end
+  end
+  
+  def discover_and_fetch_sitemap url
+    url = URI.parse url
+
+    Faraday.get url
   end
   
   def recording_timing_information as, &block
@@ -99,35 +105,37 @@ class Sitemap
   end
   
   def schema_valid?
-    sitemap_valid? && resync_valid? 
-  end
-  
-  def sitemap_valid?
     sitemap_schema.valid? doc
   end
-  
-  def resync_valid?
-    resync_schema.valid? doc
-  end
-  
-  def sitemap_validation_errors
-    @sitemap_validation_errors ||= sitemap_schema.validate doc
-  end
 
-  def resync_validation_errors
-    @resync_validation_errors ||= resync_schema.validate doc
+  def schema_errors
+    @sitemap_validation_errors ||= sitemap_schema.validate doc
   end
   
   def sitemap_schema
     if index?
-      $sitemap_index_schema ||= Nokogiri::XML::Schema(Faraday.get("http://www.sitemaps.org/schemas/sitemap/0.9/siteindex.xsd").body)
+      joint_index_schema
     else
-      $sitemap_schema ||= Nokogiri::XML::Schema(Faraday.get("http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd").body)
+      joint_sitemap_schema
     end
   end
+
+  def joint_index_schema
+    $sitemap_index_schema ||= Nokogiri::XML::Schema <<-EOF
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:import namespace="http://www.openarchives.org/rs/terms/" schemaLocation="http://www.openarchives.org/rs/0.9.1/resourcesync.xsd" />
+    <xs:import namespace="http://www.sitemaps.org/schemas/sitemap/0.9" schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9/siteindex.xsd" />
+    </xs:schema>
+    EOF
+  end
   
-  def resync_schema
-    $resync_schema ||= Nokogiri::XML::Schema(Faraday.get("http://www.openarchives.org/rs/0.9.1/resourcesync.xsd").body)
+  def joint_sitemap_schema
+    $sitemap_schema ||= Nokogiri::XML::Schema <<-EOF
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:import namespace="http://www.openarchives.org/rs/terms/" schemaLocation="http://www.openarchives.org/rs/0.9.1/resourcesync.xsd" />
+    <xs:import namespace="http://www.sitemaps.org/schemas/sitemap/0.9" schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" />
+    </xs:schema>
+    EOF
   end
   
   def urls

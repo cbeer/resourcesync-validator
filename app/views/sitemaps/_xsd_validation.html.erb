@@ -1,33 +1,35 @@
-<h3>Schema Validation</h3>
 <dl class="dl-horizontal">
   <dt>Sitemap</dt>
   <dd>
-<% if @sitemap.sitemap_valid? %>
-  <span class="label label-success">Valid</span>
-<% else %>
-  <ul>
-  <% @sitemap.sitemap_validation_errors.group_by { |x| x.to_s }.each do |k,v| %>
-    <%= content_tag :li do %>
-      <%= content_tag :span, v.length, class: 'badge' %> <%= k %>
-    <% end %>
-  <% end %>
-  </ul>
-<% end %>
+  <span class="label label-success">Present</span>
   </dd>
 
   <dt>Resource Sync</dt>
   <dd>
-  <% if @sitemap.resync_valid? %>
-    <span class="label label-success">Valid</span>
+  <% if @sitemap.resourcesync? %>
+    <span class="label label-success">Present</span>
   <% else %>
-    <ul>
-    <% @sitemap.resync_validation_errors.group_by { |x| x.to_s }.each do |k,v| %>
-      <%= content_tag :li do %>
-        <%= content_tag :span, v.length, class: 'badge' %> <%= k %>
-      <% end %>
-    <% end %>
-    </ul>
+    <span class="label label-warning">Missing</span>
   <% end %>
   </dd>
-
+  
+  <dt>Schema Valid</dt>
+  <dd>
+  <% if @sitemap.schema_valid? %>
+    <span class="label label-success">Valid</span>
+  <% else %>
+    <span class="label label-error">Error</span>
+  <% end %>
+  </dd>
 </dl>
+
+<% unless @sitemap.schema_valid?  %>
+<h4>Validation Warnings <small><span class="badge"><%= @sitemap.schema_errors.count %></span></small></h4>
+<ul>
+<% @sitemap.schema_errors.group_by { |x| x.to_s }.each do |k,v| %>
+  <%= content_tag :li do %>
+    <%= content_tag :span, v.length, class: 'badge' %> <%= k %>
+  <% end %>
+<% end %>
+</ul>
+<% end %>
