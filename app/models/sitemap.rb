@@ -5,6 +5,10 @@ class Sitemap
 
   attr_reader :url
   
+  def self.valid_capabilities
+    ['description', 'capabilitylist', 'resourcelist', 'resourcedump', 'resourcedump-manifest','changelist', 'changedump', 'changedump-manifest']
+  end
+  
   def initialize options = {}
     case
     when options[:url]
@@ -78,16 +82,11 @@ class Sitemap
     doc.root.xpath('rs:md[@capability]', rs: "http://www.openarchives.org/rs/terms/").any?
   end
   
-  def changelist?
-    doc.root.xpath('rs:md[@capability="changelist"]', rs: "http://www.openarchives.org/rs/terms/").any?
-  end
-  
-  def capabilitylist?
-    doc.root.xpath('rs:md[@capability="capabilitylist"]', rs: "http://www.openarchives.org/rs/terms/").any?
-  end
-  
-  def resourcelist?
-    doc.root.xpath('rs:md[@capability="resourcelist"]', rs: "http://www.openarchives.org/rs/terms/").any?
+  self.valid_capabilities.each do |c|
+    puts "#{c.underscore}?"
+    define_method "#{c.underscore}?" do
+      doc.root.xpath("rs:md[@capability=\"#{c}\"]", rs: "http://www.openarchives.org/rs/terms/").any?
+    end
   end
   
   def xmlns
@@ -162,9 +161,8 @@ class Sitemap
     if x
       Hash[x.attributes.map { |k,v| [k, v.to_s] }]
     else
-      x
+      {}
     end 
-    x
   end
   
   def ln

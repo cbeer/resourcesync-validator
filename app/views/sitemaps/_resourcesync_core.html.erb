@@ -1,10 +1,28 @@
-<% if object.respond_to?(:md) and object.md %>
+<% if object.respond_to?(:md) and object.md.first %>
 <dt>md</dt>
 <dd>
-  <% (object.md.first || {}).each do |k,v| %>
+  <% md = object.md.first %>
+
+  <% if @sitemap.changelist? and md['change'].blank? %>
+    <div>change: <span class="label label-danger">missing</span></div>
+  <% end %>
+
+  <% md.each do |k,v| %>
     <div><%= k %>: <%= v %></div>
   <% end %>
 </dd>
+<% elsif @sitemap.changelist? %>
+<dt>md</dt>
+<dd>
+  <% if @sitemap.index? %>
+  <span class="label label-warning">missing</span>
+  <% else %>
+  <span class="label label-danger">missing</span>
+  <% end %>
+</dd>
+<% elsif @sitemap.resourcelist? or @sitemap.resourcedump? or @sitemap.resourcedump_manifest? %>
+<dt>md</dt>
+<dd><span class="label label-warning">missing</span></dd>
 <% end %>
 
 <% object.ln.each do |rel, lns| %>
