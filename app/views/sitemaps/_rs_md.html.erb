@@ -8,20 +8,27 @@
 </dd>
 <% end %>
 
-<% @sitemap.ln.each do |m| %>
-<dt><%= m["rel"] %></dt>
+<% @sitemap.ln.each do |rel, lns| %>
+<dt><%= rel %></dt>
 <dd>
-  <% case m["rel"] %>
-  <% when "up" %>
-  <%= link_to m["href"], validate_sitemap_path(sitemap: { url: m["href"]}) %>
-    <small><%= link_to "[xml]", m["href"] %></small>
-  <% else %>
-    <%= link_to m["href"], m["href"] %>
-  <% end %>
+  <% lns.each do |m| %>
+    <% case m["rel"] %>
+    <% when "up" %>
+    <%= link_to m["href"], validate_sitemap_path(sitemap: { url: m["href"]}) %>
+      <small><%= link_to "[xml]", m["href"] %></small>
+    <% else %>
+      <%= link_to m["href"], m["href"] %>
+    <% end %>
 
-  <% m.except("rel", "href").each do |k,v| %>
-    <%= k %> <%= v %>
+    <% m.except("rel", "href").each do |k,v| %>
+      <%= k %> <%= v %>
+    <% end %>
   <% end %>
 </dd>
+<% end %>
+
+<% if @sitemap.ln['up'].blank? %>
+<dt>up</dt>
+<dd><span class="label label-warning">Missing</span></dd>
 <% end %>
 </dl>

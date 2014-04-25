@@ -7,11 +7,13 @@
 </dd>
 <% end if object.respond_to? :md %>
 
-<% object.ln.each do |m| %>
-<dt>ln</dt>
+<% object.ln.each do |rel, lns| %>
+<dt><%= rel %></dt>
 <dd>
-  <% m.each do |k,v| %>
-    <div><%= k %>: <%= v %></div>
+  <% lns.each do |m| %>
+    <% m.except("rel").each do |k,v| %>
+      <div><%= k %>: <%= v %></div>
+    <% end %>
   <% end %>
 </dd>
 <% end if object.respond_to? :ln  %>

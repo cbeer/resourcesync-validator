@@ -6,6 +6,9 @@
   <% else %>
   <li><a href="#index" data-toggle="tab">URLs <%= content_tag :span, @sitemap.length, class: 'badge' %></a></li>
   <% end %>
+  <% if @sitemap.changelist? and !@sitemap.index? %>
+  <li><a href="#index" data-toggle="tab">Changelist</a></li>
+  <% end %>
   <li><a href="#source" data-toggle="tab">Source</a></li>
 </ul>
 

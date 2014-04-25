@@ -70,6 +70,10 @@ class Sitemap
     !!content
   end
   
+  def sitemap?
+    index? || doc.xpath('sm:urlset', sm: "http://www.sitemaps.org/schemas/sitemap/0.9").any?
+  end
+  
   def resourcesync?
     doc.root.xpath('rs:md[@capability]', rs: "http://www.openarchives.org/rs/terms/").any?
   end
@@ -158,7 +162,15 @@ class Sitemap
   end
   
   def ln
-    doc.root.xpath("rs:ln", rs: "http://www.openarchives.org/rs/terms/").map { |x| Hash[x.attributes.map { |k,v| [k, v.to_s]}] }
+    h = {}
+    
+    doc.root.xpath("rs:ln", rs: "http://www.openarchives.org/rs/terms/").map do |x| 
+      ln = Hash[x.attributes.map { |k,v| [k, v.to_s]}]
+      h[ln["rel"]] ||= []
+      h[ln["rel"]] << ln
+    end
+    
+    h
   end
   
   def length

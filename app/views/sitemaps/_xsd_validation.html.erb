@@ -1,7 +1,11 @@
 <dl class="dl-horizontal">
   <dt>Sitemap</dt>
   <dd>
-  <span class="label label-success">Present</span>
+    <% if @sitemap.sitemap? %>
+      <span class="label label-success">Present</span>
+    <% else %>
+      <span class="label label-danger">Missing</span>
+    <% end %>
   </dd>
 
   <dt>Resource Sync</dt>
