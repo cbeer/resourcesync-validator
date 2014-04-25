@@ -1,16 +1,20 @@
 <% if object.respond_to?(:md) and object.md.first %>
-<dt>md</dt>
-<dd>
-  <% md = object.md.first %>
+<% md = object.md.first %>
 
-  <% if @sitemap.changelist? and md['change'].blank? %>
-    <div>change: <span class="label label-danger">missing</span></div>
-  <% end %>
+<% if md['capability'] %>
+<dt>capability</dt>
+<dd><span class="label label-<%= Sitemap.valid_capabilities.include?(@sitemap.md['capability']) ? 'success' : 'warning' %>"><%= @sitemap.md['capability'] %></span></dd>
+<% end %>
 
-  <% md.each do |k,v| %>
-    <div><%= k %>: <%= v %></div>
+<% if @sitemap.changelist? and md['change'].blank? %>
+  <dt>change</dt>
+  <dd><span class="label label-danger">missing</span></dd>
+<% end %>
+
+  <% md.except('capability').each do |k,v| %>
+    <dt><%= k %></dt>
+    <dd><%= v %></dd>
   <% end %>
-</dd>
 <% elsif @sitemap.changelist? %>
 <dt>md</dt>
 <dd>
