@@ -3,7 +3,7 @@ class Sitemap
   extend ActiveModel::Naming
   include ActiveModel::Conversion
 
-  attr_reader :url
+  attr_reader :url, :input_content
   
   def self.valid_capabilities
     ['description', 'capabilitylist', 'resourcelist', 'resourcedump', 'resourcedump-manifest','changelist', 'changedump', 'changedump-manifest']
@@ -13,7 +13,8 @@ class Sitemap
     case
     when options[:url]
       initialize_by_url options
-      
+    when options[:input_content]
+      initialize_by_data options
     end
   end
   
@@ -23,6 +24,12 @@ class Sitemap
     unless @url.starts_with? 'http'
       @url = "http://#{@url}"
     end
+  end
+  
+  def initialize_by_data options
+    @content = @input_content = options[:input_content]
+    @response = OpenStruct.new(headers: { }, body: @content)
+    @timing = -1
   end
   
   def content

@@ -1,3 +1,11 @@
+
+<ul class="nav nav-tabs">
+  <li class="<%= 'active' unless @sitemap.input_content %>"><a href="#by-url" data-toggle="tab">By URL</a></li>
+  <li class="<%= 'active' if @sitemap.input_content %>"><a href="#by-text" data-toggle="tab">Paste text</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane <%= 'active' unless @sitemap.input_content %>" id="by-url">
 <%= form_for @sitemap, method: "GET", url: validate_sitemap_url, html: { class: 'navbar-left' } do |f| %>
   <div class="input-group">
     <%= f.text_field :url, class: 'form-control', placeholder: 'URL...' %>
@@ -6,3 +14,14 @@
   </div>
   </div>
 <% end %>
+  </div>
+  <div class="tab-pane <%= 'active' if @sitemap.input_content %>" id="by-text">
+<%= form_for @sitemap, method: "POST", url: validate_sitemap_url, html: { class: 'navbar-left' } do |f| %>
+  <div class="input-group">
+    <%= f.text_area :input_content, class: 'form-control', id: "input-editor", rows: 10 %>
+    <%= f.submit 'Validate', class: 'btn btn-primary' %>
+  </div>
+  </div>
+<% end %>    
+  </div>
+</div>

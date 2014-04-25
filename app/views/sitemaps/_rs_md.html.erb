@@ -2,6 +2,7 @@
 <% if @sitemap.md %>
   <dt>capability</dt>
   <dd><span class="label label-<%= Sitemap.valid_capabilities.include?(@sitemap.md['capability']) ? 'success' : 'warning' %>"><%= @sitemap.md['capability'] %></span></dd>
+
 <dt>md</dt>
 <dd>
   <% @sitemap.md.except('capability').each do |k,v| %>
@@ -24,15 +25,25 @@
 
 <h4>Links</h4>
 <% @sitemap.ln.each do |rel, lns| %>
-<dt><%= rel %></dt>
+<dt>
+  <% if rel.nil? %>
+  <span class="label label-danger">missing</span>
+  <% else %>
+  <%= rel %>
+  <% end %>
+</dt>
 <dd>
   <% lns.each do |m| %>
+  <% if m["href"].blank? %>
+    <span class="label label-danger">href missing</span> 
+  <% else %>
     <% case m["rel"] %>
     <% when "up" %>
     <%= link_to m["href"], validate_sitemap_path(sitemap: { url: m["href"]}) %>
       <small><%= link_to "[xml]", m["href"] %></small>
     <% else %>
       <%= link_to m["href"], m["href"] %>
+    <% end %>
     <% end %>
 
     <% m.except("rel", "href").each do |k,v| %>

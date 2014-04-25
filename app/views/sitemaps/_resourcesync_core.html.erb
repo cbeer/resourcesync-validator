@@ -24,12 +24,23 @@
 <dt>md</dt>
 <dd><span class="label label-warning">missing</span></dd>
 <% end %>
-
-<% object.ln.each do |rel, lns| %>
-<dt><%= rel %></dt>
+<% object.ln.group_by { |x| x['rel'] }.each do |rel, lns| %>
+<dt>
+  <% if rel.nil? %>
+  <span class="label label-danger">missing</span>
+  <% else %>
+  <%= rel %>
+  <% end %>
+</dt>
 <dd>
   <% lns.each do |m| %>
-    <% m.except("rel").each do |k,v| %>
+    <% if m["href"].blank? %>
+      <span class="label label-danger">href missing</span> 
+    <% else %>
+      <%= link_to m["href"], m["href"] %>
+    <% end %>
+
+    <% m.except("href", "rel").each do |k,v| %>
       <div><%= k %>: <%= v %></div>
     <% end %>
   <% end %>
