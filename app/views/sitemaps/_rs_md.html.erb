@@ -1,8 +1,8 @@
 <dl class="dl-horizontal">
-<% @sitemap.md.each do |m| %>
+<% if @sitemap.md %>
 <dt>md</dt>
 <dd>
-  <% m.each do |k,v| %>
+  <% @sitemap.md.each do |k,v| %>
     <div><%= k %>: <%= v %></div>
   <% end %>
 </dd>

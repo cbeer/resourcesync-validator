@@ -158,7 +158,13 @@ class Sitemap
   end
   
   def md
-    doc.root.xpath("rs:md", rs: "http://www.openarchives.org/rs/terms/").map { |x| Hash[x.attributes.map { |k,v| [k, v.to_s]}] }
+    x = doc.root.xpath("rs:md", rs: "http://www.openarchives.org/rs/terms/").first
+    if x
+      Hash[x.attributes.map { |k,v| [k, v.to_s] }]
+    else
+      x
+    end 
+    x
   end
   
   def ln

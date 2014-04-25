@@ -1,11 +1,11 @@
-<% object.md.each do |m| %>
+<% if object.respond_to?(:md) and object.md %>
 <dt>md</dt>
 <dd>
-  <% m.each do |k,v| %>
+  <% (object.md.first || {}).each do |k,v| %>
     <div><%= k %>: <%= v %></div>
   <% end %>
 </dd>
-<% end if object.respond_to? :md %>
+<% end %>
 
 <% object.ln.each do |rel, lns| %>
 <dt><%= rel %></dt>

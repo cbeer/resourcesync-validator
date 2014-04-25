@@ -4,10 +4,13 @@
   <% if @sitemap.index? || @sitemap.capabilitylist? %>
   <li><a href="#index" data-toggle="tab">Index <%= content_tag :span, @sitemap.length, class: 'badge' %></a></li>
   <% else %>
-  <li><a href="#index" data-toggle="tab">URLs <%= content_tag :span, @sitemap.length, class: 'badge' %></a></li>
-  <% end %>
-  <% if @sitemap.changelist? and !@sitemap.index? %>
-  <li><a href="#index" data-toggle="tab">Changelist</a></li>
+  <li>
+    <% if @sitemap.changelist? %>
+      <a href="#index" data-toggle="tab">Changelist <%= content_tag :span, @sitemap.length, class: 'badge' %></a>
+    <% else %>
+      <a href="#index" data-toggle="tab">URLs <%= content_tag :span, @sitemap.length, class: 'badge' %></a>
+    <% end %>
+  </li>
   <% end %>
   <li><a href="#source" data-toggle="tab">Source</a></li>
 </ul>
