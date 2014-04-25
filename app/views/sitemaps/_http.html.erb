@@ -41,10 +41,12 @@
   
   <dt>Response items</dt>
   <dd>
-    <% if (@sitemap.urls.length + @sitemap.sitemaps.length) <= 50000 %>
-    <%= content_tag :span, number_with_delimiter(@sitemap.length), class: 'label label-success' %>
-    <% else %>
+    <% if @sitemap.length == 0 %>
+    <%= content_tag :span, number_with_delimiter(@sitemap.length), class: 'label label-warning' %>
+    <% elsif @sitemap.length >= 50000 %>
     <%= content_tag :span, number_with_delimiter(@sitemap.length), class: 'label label-danger' %>
+    <% else %>
+    <%= content_tag :span, number_with_delimiter(@sitemap.length), class: 'label label-success' %>
     <% end %>
   </dd>
 </dl>
