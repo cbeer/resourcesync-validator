@@ -1,2 +1,15 @@
-<h2>Changelist</h2>
-<%= render 'urls_or_sitemaps' %>
+<% data = @sitemap.urls.group_by { |x| (x.md.first || {})["change"] } %>
+<ul class="nav nav-pills">
+<% data.keys.each do |k| %>
+  <li class="<%= 'active' if k == data.keys.first %>"><a href="#<%= k %>"  data-toggle="pill"><%= k %></a></li>
+<% end %>
+</ul>
+<!-- Tab panes -->
+<div class="tab-content">
+<% data.each do |k, urls|  %>
+    <%= content_tag :div, id: k, class: "tab-pane #{'in active' if k == data.keys.first}" do %>
+    <h3><%= k %> <span class="badge"><%= urls.length %></span></h3>
+    <%= render partial: 'url', collection: urls %>
+  <% end %>
+<% end %>
+</div>

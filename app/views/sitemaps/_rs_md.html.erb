@@ -27,8 +27,10 @@
 </dd>
 <% end %>
 
-<% if @sitemap.ln['up'].blank? %>
-<dt>up</dt>
-<dd><span class="label label-warning">Missing</span></dd>
+<% ['describedby', 'up'].each do |t| %>
+  <% if @sitemap.ln[t].blank? %>
+  <dt><%= t %></dt>
+  <dd><span class="label label-warning">Missing</span></dd>
+  <% end %>
 <% end %>
 </dl>
