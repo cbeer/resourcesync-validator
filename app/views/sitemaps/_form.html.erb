@@ -19,7 +19,7 @@
 <%= form_for @sitemap, method: "POST", url: validate_sitemap_url, html: { class: 'navbar-left' } do |f| %>
   <div class="input-group">
     <%= f.text_area :input_content, class: 'form-control', id: "input-editor", rows: 10 %>
-    <%= f.submit 'Validate', class: 'btn btn-primary' %>
+    <%= f.submit 'Validate Source', class: 'btn btn-primary' %>
   </div>
   </div>
 <% end %>    
