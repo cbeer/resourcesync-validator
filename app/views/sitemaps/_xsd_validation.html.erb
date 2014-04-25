@@ -24,7 +24,8 @@
 </dl>
 
 <% unless @sitemap.schema_valid?  %>
-<h4>Validation Warnings <small><span class="badge"><%= @sitemap.schema_errors.count %></span></small></h4>
+<div class="alert alert-danger">
+<h4>Schema Validation Errors <small><span class="badge"><%= @sitemap.schema_errors.count %></span></small></h4>
 <ul>
 <% @sitemap.schema_errors.group_by { |x| x.to_s }.each do |k,v| %>
   <%= content_tag :li do %>
@@ -32,4 +33,5 @@
   <% end %>
 <% end %>
 </ul>
+</div>
 <% end %>
