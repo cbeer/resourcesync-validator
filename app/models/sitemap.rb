@@ -56,7 +56,44 @@ class Sitemap
       sitemap.ok.set("HTTP", ok) unless ok.empty?
     end
   end
+  
+  class SchemaValidations < ActiveModel::Validator
+    include ActionView::Helpers::NumberHelper
+    
+    def validate sitemap
+      
+      errors = {}
+      warnings = {}
+      ok = {}
+      
+      if sitemap.sitemap?
+        ok['Sitemap'] = "Present"
+      else
+        errors['Sitemap'] = "Missing"
+      end
+
+      if sitemap.resourcesync?
+        ok['Resource Sync'] = "Present"
+      else
+        warnings['Resource Sync'] = "Missing"
+      end
+      
+      if sitemap.schema_valid?
+        ok['Schema Valid'] = "Yes"
+      else
+        errors['Schema Valid'] = 'No'
+      end
+
+      sitemap.errors["XSD Validation"] = {} unless errors.empty?
+      sitemap.errors.set("XSD Validation", errors) unless errors.empty?
+      sitemap.warnings["XSD Validation"] = {} unless warnings.empty?
+      sitemap.warnings.set("XSD Validation", warnings) unless warnings.empty?
+      sitemap.ok["XSD Validation"] = {} unless ok.empty?
+      sitemap.ok.set("XSD Validation", ok) unless ok.empty?
+    end
+  end
   validates_with HttpValidations
+  validates_with SchemaValidations
   
   def self.valid_capabilities
     ['description', 'capabilitylist', 'resourcelist', 'resourcedump', 'resourcedump-manifest','changelist', 'changedump', 'changedump-manifest']

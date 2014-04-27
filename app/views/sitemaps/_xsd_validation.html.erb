@@ -1,31 +1,5 @@
-<dl class="dl-horizontal">
-  <dt>Sitemap</dt>
-  <dd>
-    <% if @sitemap.sitemap? %>
-      <span class="label label-success">Present</span>
-    <% else %>
-      <span class="label label-danger">Missing</span>
-    <% end %>
-  </dd>
-
-  <dt>Resource Sync</dt>
-  <dd>
-  <% if @sitemap.resourcesync? %>
-    <span class="label label-success">Present</span>
-  <% else %>
-    <span class="label label-warning">Missing</span>
-  <% end %>
-  </dd>
-  
-  <dt>Schema Valid</dt>
-  <dd>
-  <% if @sitemap.schema_valid? %>
-    <span class="label label-success">Valid</span>
-  <% else %>
-    <span class="label label-danger">Error</span>
-  <% end %>
-  </dd>
-</dl>
+<h3>XSD Validation</h3>
+<%= render partial: 'validations', locals: { validate: 'XSD Validation'} %>
 
 <% unless @sitemap.schema_valid?  %>
 <div class="alert alert-danger">
