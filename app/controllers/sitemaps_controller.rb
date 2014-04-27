@@ -6,9 +6,11 @@ class SitemapsController < ApplicationController
   def validate
     @sitemap = Sitemap.new sitemap_params
     
-    if !@sitemap.valid?
+    if !@sitemap.sitemap?
       flash[:alert] = "Invalid sitemap"
       render 'new'
+    else
+      @sitemap.valid?
     end
   end
   

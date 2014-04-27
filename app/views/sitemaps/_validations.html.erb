@@ -1,0 +1,12 @@
+<dl class="dl-horizontal">
+  <% @sitemap.validations_for(validate).each do |key| %>
+    <%= content_tag :dt, key %>
+
+    <dd>
+      <%= content_tag :span, @sitemap.ok.get(validate)[key], class: 'label label-success' if (@sitemap.ok.get(validate) || {})[key] %>
+      <%= content_tag :span, @sitemap.warnings.get(validate)[key], class: 'label label-warning' if (@sitemap.warnings.get(validate) || {})[key] %>
+      <%= content_tag :span, @sitemap.errors.get(validate)[key], class: 'label label-danger' if (@sitemap.errors.get(validate) || {})[key] %>
+    </dd>
+  <% end %>
+
+</dl>

@@ -2,11 +2,85 @@ require 'benchmark'
 class Sitemap
   extend ActiveModel::Naming
   include ActiveModel::Conversion
+  include ActiveModel::Validations
 
   attr_reader :url, :input_content
+
+  class HttpValidations < ActiveModel::Validator
+    include ActionView::Helpers::NumberHelper
+    
+    def validate sitemap
+      return if sitemap.input_content
+      errors = {}
+      warnings = {}
+      ok = {}
+      
+      
+      if sitemap.response.status == 200 
+        ok["Status"] = "OK"
+      else
+        errors["Status"] = sitemap.response.status 
+      end
+
+      if Sitemap.valid_http_content_types.include? sitemap.response.headers['Content-Type']
+        ok["Content-Type"] = sitemap.response.headers['Content-Type']
+      else
+        errors["Content-Type"] = sitemap.response.headers['Content-Type'] 
+      end  
+
+      if sitemap.timing < 2
+        ok["Response Time"] = "#{sitemap.timing}s"
+      elsif sitemap.timing < 10
+        warnings["Response Time"] = "#{sitemap.timing}s"
+      else
+        errors["Response Time"] = "#{sitemap.timing}s"
+      end
+      
+      if sitemap.length > 0
+        ok["Response items"] = number_with_delimiter(sitemap.length)
+      else
+        warnings["Response items"] = number_with_delimiter(sitemap.length)
+      end
+      
+      if sitemap.response.body.length < 10.megabytes
+        ok["Response Size"] = number_to_human_size(sitemap.response.body.length)
+      else
+        warnings["Response Size"] = number_to_human_size(sitemap.response.body.length)
+      end
+
+      sitemap.errors["HTTP"] = {} unless errors.empty?
+      sitemap.errors.set("HTTP", errors) unless errors.empty?
+      sitemap.warnings["HTTP"] = {} unless warnings.empty?
+      sitemap.warnings.set("HTTP", warnings) unless warnings.empty?
+      sitemap.ok["HTTP"] = {} unless ok.empty?
+      sitemap.ok.set("HTTP", ok) unless ok.empty?
+    end
+  end
+  validates_with HttpValidations
   
   def self.valid_capabilities
     ['description', 'capabilitylist', 'resourcelist', 'resourcedump', 'resourcedump-manifest','changelist', 'changedump', 'changedump-manifest']
+  end
+  
+  def self.valid_http_content_types
+    ["application/xml", "text/xml"]
+  end
+  
+  def ok
+    @ok ||= ActiveModel::Errors.new(self)
+  end
+  
+  def warnings
+    @warnings ||= ActiveModel::Errors.new(self)
+  end
+  
+  def validations_for key
+    @validations_for ||= {}
+    @validations_for[key] ||= [:errors, :warnings, :ok].map do |x|
+      send(x).get(key) || {}
+    end.flatten.inject([]) do |memo, v|
+      memo += v.keys
+    end
   end
   
   def initialize options = {}
@@ -77,10 +151,6 @@ class Sitemap
     false
   end
   
-  def valid?
-    !!content
-  end
-  
   def sitemap?
     index? || doc.xpath('sm:urlset', sm: "http://www.sitemaps.org/schemas/sitemap/0.9").any?
   end
@@ -90,7 +160,6 @@ class Sitemap
   end
   
   self.valid_capabilities.each do |c|
-    puts "#{c.underscore}?"
     define_method "#{c.underscore}?" do
       doc.root.xpath("rs:md[@capability=\"#{c}\"]", rs: "http://www.openarchives.org/rs/terms/").any?
     end
@@ -170,6 +239,10 @@ class Sitemap
     else
       {}
     end 
+  end
+  
+  def required_attributes
+    
   end
   
   def ln
