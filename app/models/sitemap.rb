@@ -92,8 +92,35 @@ class Sitemap
       sitemap.ok.set("XSD Validation", ok) unless ok.empty?
     end
   end
+
+  class LinkValidations < ActiveModel::Validator
+    include ActionView::Helpers::NumberHelper
+    
+    def validate sitemap
+      return if sitemap.input_content
+      errors = {}
+      warnings = {}
+      ok = {}
+
+      if sitemap.ln['describedby'].blank?
+        warnings['describedby'] = "Missing"
+      end
+      
+      if sitemap.ln['up'].blank? and !sitemap.description?
+        warnings['up'] = "Missing"
+      end
+      
+      sitemap.errors["rs:ln"] = {} unless errors.empty?
+      sitemap.errors.set("rs:ln", errors) unless errors.empty?
+      sitemap.warnings["rs:ln"] = {} unless warnings.empty?
+      sitemap.warnings.set("rs:ln", warnings) unless warnings.empty?
+      sitemap.ok["rs:ln"] = {} unless ok.empty?
+      sitemap.ok.set("rs:ln", ok) unless ok.empty?
+    end
+  end
   validates_with HttpValidations
   validates_with SchemaValidations
+  validates_with LinkValidations
   
   def self.valid_capabilities
     ['description', 'capabilitylist', 'resourcelist', 'resourcedump', 'resourcedump-manifest','changelist', 'changedump', 'changedump-manifest']
@@ -278,8 +305,25 @@ class Sitemap
     end 
   end
   
-  def required_attributes
+  def required_md_attributes
+    required_attributes = []
+    if (resourcelist? || resourcedump? || resourcedump_manifest?)
+      required_attributes << 'at'
+    end
     
+    if (changelist? or changedump?)
+      required_attributes << 'from'
+    end
+    
+    required_attributes
+  end
+  
+  def preferred_md_attributes
+    preferred_md_attributes = []
+    if (changelist? or changedump? or changedump_manifest?)
+      preferred_md_attributes << 'until'
+    end
+    preferred_md_attributes
   end
   
   def ln

@@ -1,65 +1,54 @@
 <dl class="dl-horizontal">
 <% if @sitemap.md %>
   <dt>capability</dt>
-  <dd><span class="label label-<%= Sitemap.valid_capabilities.include?(@sitemap.md['capability']) ? 'success' : 'warning' %>"><%= @sitemap.md['capability'] %></span></dd>
-
-<dt>md</dt>
-<dd>
+  <dd>
+    <span class="label label-<%= Sitemap.valid_capabilities.include?(@sitemap.md['capability']) ? 'success' : 'warning' %>"><%= @sitemap.md['capability'] %></span>
+  </dd>
   <% @sitemap.md.except('capability').each do |k,v| %>
-    <div><%= k %>: <%= v %></div>
+    <dt><%= k %></dt>
+    <dd><%= v %></dd>
   <% end %>
   
-  <% if (@sitemap.resourcelist? || @sitemap.resourcedump? || @sitemap.resourcedump_manifest?) and @sitemap.md['at'].blank? %>
-    <div>at: <span class="label label-danger">missing</span></div> 
+  <% (@sitemap.required_md_attributes - @sitemap.md.keys).each do |k| %>
+    <dt><%= k %></dt>
+    <dd><span class="label label-danger">missing</span></dd> 
   <% end %>
   
-  <% if (@sitemap.changelist? or @sitemap.changedump?) and @sitemap.md['from'].blank? %>
-    <div>from: <span class="label label-danger">missing</span></div> 
+  <% (@sitemap.preferred_md_attributes - @sitemap.md.keys).each do |k| %>
+    <dt><%= k %></dt>
+    <dd><span class="label label-info">missing</span></dd> 
   <% end %>
-  
-  <% if (@sitemap.changelist? or @sitemap.changedump? or @sitemap.changedump_manifest?) and @sitemap.md['until'].blank? %>
-    <div>until: <span class="label label-info">missing</span></div> 
-  <% end %>
-</dd>
 <% end %>
 
 <h4>Links</h4>
 <% @sitemap.ln.each do |rel, lns| %>
-<dt>
-  <% if rel.nil? %>
-  <span class="label label-danger">missing</span>
-  <% else %>
-  <%= rel %>
-  <% end %>
-</dt>
-<dd>
-  <% lns.each do |m| %>
-  <% if m["href"].blank? %>
-    <span class="label label-danger">href missing</span> 
-  <% else %>
-    <% case m["rel"] %>
-    <% when "up" %>
-    <%= link_to m["href"], validate_sitemap_path(sitemap: { url: m["href"]}) %>
-      <small><%= link_to "[xml]", m["href"] %></small>
+  <dt>
+    <% if rel.nil? %>
+      <span class="label label-danger">missing</span>
     <% else %>
-      <%= link_to m["href"], m["href"] %>
+      <%= rel %>
     <% end %>
-    <% end %>
+  </dt>
+  <dd>
+    <% lns.each do |m| %>
+    <% if m["href"].blank? %>
+      <span class="label label-danger">href missing</span> 
+    <% else %>
+      <% case m["rel"] %>
+      <% when "up" %>
+      <%= link_to m["href"], validate_sitemap_path(sitemap: { url: m["href"]}) %>
+        <small><%= link_to "[xml]", m["href"] %></small>
+      <% else %>
+        <%= link_to m["href"], m["href"] %>
+      <% end %>
+      <% end %>
 
-    <% m.except("rel", "href").each do |k,v| %>
-      <%= k %> <%= v %>
+      <% m.except("rel", "href").each do |k,v| %>
+        <%= k %> <%= v %>
+      <% end %>
     <% end %>
-  <% end %>
-</dd>
+  </dd>
 <% end %>
-
-  <% if @sitemap.ln['describedby'].blank? %>
-  <dt>describedby</dt>
-  <dd><span class="label label-warning">Missing</span></dd>
-  <% end %>
-
-  <% if @sitemap.ln['up'].blank? and !@sitemap.description? %>
-  <dt>up</dt>
-  <dd><span class="label label-warning">Missing</span></dd>
-  <% end %>
 </dl>
+
+<%= render partial: 'validations', locals: { validate: 'rs:ln'} %>
