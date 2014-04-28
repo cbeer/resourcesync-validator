@@ -1,4 +1,3 @@
-
 <ul class="nav nav-tabs">
   <li class="active"><a href="#validation" data-toggle="tab">Validation</a></li>
   <% if @sitemap.index? || @sitemap.capabilitylist? %>
@@ -21,13 +20,15 @@
       <%= render 'http' %>
     </div>
 
-    <% if @sitemap.resourcesync? %>
     <div class="col-md-6">
       <h3>ResourceSync</h3>
-      <%= render 'rs_validation' %>
-      <%= render 'rs_md' %>
+      <% if @sitemap.resourcesync? %>
+        <%= render 'rs_validation' %>
+        <%= render 'rs_md' %>
+      <% else %>
+        <span class="label label-info">Missing</span>
+      <% end %>
     </div>
-    <% end %>
 
     <div class="col-md-12">
       <%= render 'xsd_validation' %>

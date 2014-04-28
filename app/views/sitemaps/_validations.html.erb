@@ -1,11 +1,11 @@
 <dl class="dl-horizontal">
   <% @sitemap.validations_for(validate).each do |key| %>
-    <%= content_tag :dt, key %>
+    <%= content_tag :dt, "#{key.to_s.gsub(validate, "").gsub(/^_/, '')}".humanize %>
 
     <dd>
-      <%= content_tag :span, @sitemap.ok.get(validate)[key], class: 'label label-success' if (@sitemap.ok.get(validate) || {})[key] %>
-      <%= content_tag :span, @sitemap.warnings.get(validate)[key], class: 'label label-warning' if (@sitemap.warnings.get(validate) || {})[key] %>
-      <%= content_tag :span, @sitemap.errors.get(validate)[key], class: 'label label-danger' if (@sitemap.errors.get(validate) || {})[key] %>
+      <%= content_tag :span, @sitemap.ok.get(key).join(";"), class: 'label label-success' if @sitemap.ok.get(key) %>
+      <%= content_tag :span, @sitemap.warnings.get(key).join(";"), class: 'label label-warning' if @sitemap.warnings.get(key) %>
+      <%= content_tag :span, @sitemap.errors.get(key).join(";"), class: 'label label-danger' if @sitemap.errors.get(key) %>
     </dd>
   <% end %>
 

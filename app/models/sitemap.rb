@@ -11,49 +11,38 @@ class Sitemap
     
     def validate sitemap
       return if sitemap.input_content
-      errors = {}
-      warnings = {}
-      ok = {}
-      
       
       if sitemap.response.status == 200 
-        ok["Status"] = "OK"
+        sitemap.ok.add "http_Status", "OK"
       else
-        errors["Status"] = sitemap.response.status 
+        sitemap.errors.add "http_Status", sitemap.response.status 
       end
 
       if Sitemap.valid_http_content_types.include? sitemap.response.headers['Content-Type']
-        ok["Content-Type"] = sitemap.response.headers['Content-Type']
+        sitemap.ok.add "http_Content-Type", sitemap.response.headers['Content-Type']
       else
-        errors["Content-Type"] = sitemap.response.headers['Content-Type'] 
+        sitemap.errors.add "http_Content-Type", sitemap.response.headers['Content-Type'] 
       end  
 
       if sitemap.timing < 2
-        ok["Response Time"] = "#{sitemap.timing}s"
+        sitemap.ok.add "http_Response Time", "#{sitemap.timing}s"
       elsif sitemap.timing < 10
-        warnings["Response Time"] = "#{sitemap.timing}s"
+        sitemap.warnings.add "http_Response Time", "#{sitemap.timing}s"
       else
-        errors["Response Time"] = "#{sitemap.timing}s"
+        sitemap.errors.add "http_Response Time", "#{sitemap.timing}s"
       end
       
       if sitemap.length > 0
-        ok["Response items"] = number_with_delimiter(sitemap.length)
+        sitemap.ok.add "http_Response items", number_with_delimiter(sitemap.length)
       else
-        warnings["Response items"] = number_with_delimiter(sitemap.length)
+        sitemap.warnings.add "http_Response items", number_with_delimiter(sitemap.length)
       end
       
       if sitemap.response.body.length < 10.megabytes
-        ok["Response Size"] = number_to_human_size(sitemap.response.body.length)
+        sitemap.ok.add "http_Response Size", number_to_human_size(sitemap.response.body.length)
       else
-        warnings["Response Size"] = number_to_human_size(sitemap.response.body.length)
+        sitemap.warnings.add "http_Response Size", number_to_human_size(sitemap.response.body.length)
       end
-
-      sitemap.errors["HTTP"] = {} unless errors.empty?
-      sitemap.errors.set("HTTP", errors) unless errors.empty?
-      sitemap.warnings["HTTP"] = {} unless warnings.empty?
-      sitemap.warnings.set("HTTP", warnings) unless warnings.empty?
-      sitemap.ok["HTTP"] = {} unless ok.empty?
-      sitemap.ok.set("HTTP", ok) unless ok.empty?
     end
   end
   
@@ -62,34 +51,23 @@ class Sitemap
     
     def validate sitemap
       
-      errors = {}
-      warnings = {}
-      ok = {}
-      
       if sitemap.sitemap?
-        ok['Sitemap'] = "Present"
+        sitemap.ok.add 'xsd_Sitemap', "Present"
       else
-        errors['Sitemap'] = "Missing"
+        sitemap.errors.add 'xsd_Sitemap', "Missing"
       end
 
       if sitemap.resourcesync?
-        ok['Resource Sync'] = "Present"
+        sitemap.ok.add 'xsd_Resource Sync', "Present"
       else
-        warnings['Resource Sync'] = "Missing"
+        sitemap.warnings.add 'xsd_Resource Sync', "Missing"
       end
       
       if sitemap.schema_valid?
-        ok['Schema Valid'] = "Yes"
+        sitemap.ok.add 'xsd_Schema Valid', "Yes"
       else
-        errors['Schema Valid'] = 'No'
+        sitemap.errors.add 'xsd_Schema Valid', "No"
       end
-
-      sitemap.errors["XSD Validation"] = {} unless errors.empty?
-      sitemap.errors.set("XSD Validation", errors) unless errors.empty?
-      sitemap.warnings["XSD Validation"] = {} unless warnings.empty?
-      sitemap.warnings.set("XSD Validation", warnings) unless warnings.empty?
-      sitemap.ok["XSD Validation"] = {} unless ok.empty?
-      sitemap.ok.set("XSD Validation", ok) unless ok.empty?
     end
   end
 
@@ -97,25 +75,15 @@ class Sitemap
     include ActionView::Helpers::NumberHelper
     
     def validate sitemap
-      return if sitemap.input_content
-      errors = {}
-      warnings = {}
-      ok = {}
+      return unless sitemap.resourcesync?
 
       if sitemap.ln['describedby'].blank?
-        warnings['describedby'] = "Missing"
+        sitemap.warnings.add 'rs:ln_describedby', "Missing"
       end
       
       if sitemap.ln['up'].blank? and !sitemap.description?
-        warnings['up'] = "Missing"
+        sitemap.warnings.add 'rs:ln_up', "Missing"
       end
-      
-      sitemap.errors["rs:ln"] = {} unless errors.empty?
-      sitemap.errors.set("rs:ln", errors) unless errors.empty?
-      sitemap.warnings["rs:ln"] = {} unless warnings.empty?
-      sitemap.warnings.set("rs:ln", warnings) unless warnings.empty?
-      sitemap.ok["rs:ln"] = {} unless ok.empty?
-      sitemap.ok.set("rs:ln", ok) unless ok.empty?
     end
   end
   validates_with HttpValidations
@@ -127,7 +95,12 @@ class Sitemap
   end
   
   def self.valid_http_content_types
-    ["application/xml", "text/xml"]
+    ["application/xml", "text/xml", "application/x-gzip"]
+  end
+  
+  def valid?
+    return @valid if instance_variable_defined? :@valid
+    @valid ||= super
   end
   
   def ok
@@ -139,11 +112,8 @@ class Sitemap
   end
   
   def validations_for key
-    @validations_for ||= {}
-    @validations_for[key] ||= [:errors, :warnings, :ok].map do |x|
-      send(x).get(key) || {}
-    end.flatten.inject([]) do |memo, v|
-      memo += v.keys
+    (errors.keys + warnings.keys + ok.keys).select do |x|
+      x.to_s.starts_with? key
     end
   end
   
