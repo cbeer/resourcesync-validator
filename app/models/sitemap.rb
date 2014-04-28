@@ -86,10 +86,28 @@ class Sitemap
       end
     end
   end
+  
+  class MdValidations < ActiveModel::Validator
+    include ActionView::Helpers::NumberHelper
+    
+    def validate sitemap
+      return unless sitemap.resourcesync?
+
+
+      (sitemap.required_md_attributes - sitemap.md.keys).each do |k|
+        sitemap.errors.add "rs:md_#{k}", "Missing"
+      end
+
+      (sitemap.preferred_md_attributes - sitemap.md.keys).each do |k|
+        sitemap.warnings.add "rs:md_#{k}", "Missing"
+      end
+    end
+  end
   validates_with HttpValidations
   validates_with SchemaValidations
   validates_with LinkValidations
-  
+  validates_with MdValidations
+
   def self.valid_capabilities
     ['description', 'capabilitylist', 'resourcelist', 'resourcedump', 'resourcedump-manifest','changelist', 'changedump', 'changedump-manifest']
   end

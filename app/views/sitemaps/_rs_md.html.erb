@@ -9,15 +9,7 @@
     <dd><%= v %></dd>
   <% end %>
   
-  <% (@sitemap.required_md_attributes - @sitemap.md.keys).each do |k| %>
-    <dt><%= k %></dt>
-    <dd><span class="label label-danger">missing</span></dd> 
-  <% end %>
-  
-  <% (@sitemap.preferred_md_attributes - @sitemap.md.keys).each do |k| %>
-    <dt><%= k %></dt>
-    <dd><span class="label label-info">missing</span></dd> 
-  <% end %>
+  <%= render partial: 'validations', locals: { validate: 'rs:md' } %>
 <% end %>
 
 <h4>Links</h4>
