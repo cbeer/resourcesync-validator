@@ -5,7 +5,7 @@ describe "bbc", vcr: true do
     visit "/"
     fill_in "sitemap_url", with: "http://www.bbc.co.uk/sitemap.xml"
     click_on "Validate"
-    expect(page).to have_content "HTTP Status OK"
+    expect(page).to have_content "Status OK"
     expect(page).to have_content "http://www.bbc.co.uk/news/sitemap.xml"
   end
   
@@ -13,7 +13,7 @@ describe "bbc", vcr: true do
     visit "/"
     fill_in "sitemap_url", with: "http://www.bbc.co.uk/news/sitemap.xml"
     click_on "Validate"
-    expect(page).to have_content "HTTP Status OK"
+    expect(page).to have_content "Status OK"
     expect(page).to have_content "http://www.bbc.co.uk/news/science-environment-27039710"
   end
  end
