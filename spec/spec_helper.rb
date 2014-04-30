@@ -7,6 +7,8 @@ require 'rspec/autorun'
 require 'capybara/rails'
 require 'vcr'
 
+require 'coveralls'
+Coveralls.wear!
 
 VCR.configure do |c|
   c.cassette_library_dir = 'spec/cassettes'

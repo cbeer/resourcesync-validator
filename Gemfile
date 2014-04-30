@@ -55,4 +55,5 @@ group :test do
   gem 'webmock'
   gem 'rspec-rails'
   gem 'capybara'
+  gem 'coveralls', require: false
 end
