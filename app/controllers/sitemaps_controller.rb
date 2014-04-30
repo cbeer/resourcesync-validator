@@ -31,7 +31,7 @@ class SitemapsController < ApplicationController
       end
       
     else  
-      errors.add "http status", url.response.status.to_s
+      errors.add "http status", url.response.status.to_s unless url.md and url.md[:change] == 'deleted'
     end
     
     if errors.empty?

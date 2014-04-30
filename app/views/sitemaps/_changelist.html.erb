@@ -1,4 +1,4 @@
-<% data = @sitemap.urls.group_by { |x| (x.md.first || {})["change"] } %>
+<% data = @sitemap.urls.group_by { |x| (x.md || {})["change"] } %>
 <ul class="nav nav-pills">
 <% data.keys.each do |k| %>
   <li class="<%= 'active' if k == data.keys.first %>"><a href="#<%= k %>"  data-toggle="pill"><%= k %></a></li>
