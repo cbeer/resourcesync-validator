@@ -77,11 +77,11 @@ class Sitemap
     def validate sitemap
       return unless sitemap.resourcesync?
 
-      if sitemap.ln['describedby'].blank?
+      if sitemap.lns_by_rel['describedby'].blank?
         sitemap.warnings.add 'rs:ln_describedby', "Missing"
       end
       
-      if sitemap.ln['up'].blank? and !sitemap.description?
+      if sitemap.lns_by_rel['up'].blank? and !sitemap.description?
         sitemap.warnings.add 'rs:ln_up', "Missing"
       end
     end
@@ -305,19 +305,21 @@ class Sitemap
     preferred_md_attributes
   end
   
-  def ln
-    h = {}
-    
+  def lns
     doc.root.xpath("rs:ln", rs: "http://www.openarchives.org/rs/terms/").map do |x| 
-      ln = Hash[x.attributes.map { |k,v| [k, v.to_s]}]
-      h[ln["rel"]] ||= []
-      h[ln["rel"]] << ln
+      Hash[x.attributes.map { |k,v| [k, v.to_s]}]
     end
-    
-    h
+  end
+  
+  def lns_by_rel
+    @lns_by_rel ||= lns.group_by { |x| x['rel'] }
   end
   
   def length
     urls.length + sitemaps.length
+  end
+  
+  def changes
+    @changes ||= urls.group_by { |x| (x.md || {})["change"] } if changelist? or changedump?
   end
 end

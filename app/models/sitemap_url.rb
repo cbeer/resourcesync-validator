@@ -36,4 +36,12 @@ class SitemapUrl < OpenStruct
   def to_partial_path
     "sitemaps/#{self.class.to_s.underscore}"
   end
+  
+  def lns
+    ln || []
+  end
+  
+  def lns_by_rel
+    lns.group_by { |x| x['rel'] }
+  end
 end

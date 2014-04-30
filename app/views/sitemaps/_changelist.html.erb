@@ -1,13 +1,13 @@
-<% data = @sitemap.urls.group_by { |x| (x.md || {})["change"] } %>
 <ul class="nav nav-pills">
-<% data.keys.each do |k| %>
-  <li class="<%= 'active' if k == data.keys.first %>"><a href="#<%= k %>"  data-toggle="pill"><%= k %></a></li>
+<% @sitemap.changes.keys.each_with_index do |k, i| %>
+  <li class="<%= 'active' if i == 0 %>"><a href="#<%= k %>"  data-toggle="pill"><%= k %></a></li>
 <% end %>
 </ul>
+
 <!-- Tab panes -->
 <div class="tab-content">
-<% data.each do |k, urls|  %>
-    <%= content_tag :div, id: k, class: "tab-pane #{'in active' if k == data.keys.first}" do %>
+<% @sitemap.changes.each do |k, urls|  %>
+    <%= content_tag :div, id: k, class: "tab-pane #{'in active' if k == @sitemap.changes.keys.first}" do %>
     <h3><%= k %> <span class="badge"><%= urls.length %></span></h3>
     <%= render urls %>
   <% end %>

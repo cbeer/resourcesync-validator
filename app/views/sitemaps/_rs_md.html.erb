@@ -13,7 +13,7 @@
 <% end %>
 
 <h4>Links</h4>
-<% @sitemap.ln.each do |rel, lns| %>
+<% @sitemap.lns_by_rel.each do |rel, lns| %>
   <dt>
     <% if rel.nil? %>
       <span class="label label-danger">missing</span>
