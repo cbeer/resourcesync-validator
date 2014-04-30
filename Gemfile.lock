@@ -75,6 +75,8 @@ GEM
     pg (0.17.1)
     polyglot (0.3.4)
     rack (1.5.2)
+    rack-attack (4.0.0)
+      rack
     rack-test (0.6.2)
       rack (>= 1.0)
     rails (4.1.0)
@@ -167,6 +169,7 @@ DEPENDENCIES
   jquery-rails
   nokogiri
   pg
+  rack-attack
   rails (= 4.1.0)
   rails_12factor
   rspec-rails

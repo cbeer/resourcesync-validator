@@ -48,6 +48,7 @@ gem 'bootstrap-sass'
 gem 'faraday'
 gem 'ace-rails-ap'
 gem 'secure_headers'
+gem 'rack-attack'
 
 group :test do
   gem 'vcr'
