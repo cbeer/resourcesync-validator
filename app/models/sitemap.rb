@@ -231,7 +231,7 @@ class Sitemap
   
   def sitemaps
     doc.xpath("//sm:sitemap", sm: xmlns).map do |s|
-      OpenStruct.new({doc: s}.merge(Hash[s.children.map { |n| [n.name,n.inner_text]}]))
+      SitemapIndexUrl.from_fragment s
     end
   end
   
@@ -271,18 +271,7 @@ class Sitemap
   
   def urls
     doc.xpath("//sm:url", sm: xmlns).map do |s|
-      h = {}
-      s.children.each do |n| 
-        if n.inner_text.blank? && n.attributes.any?
-          h[n.name] ||= []
-          h[n.name] << Hash[n.attributes.map { |k,v| [k,v.to_s] }]
-        else
-          h[n.name] = n.inner_text
-        end
-        
-        h['md'] &&= h['md'].first
-      end
-      OpenStruct.new({doc: s}.merge(h))
+      SitemapUrl.from_fragment s
     end
   end
   

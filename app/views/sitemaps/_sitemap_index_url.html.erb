@@ -1,0 +1,13 @@
+<li class="sitemap">
+  <h4 class="loc"><%= link_to sitemap_index_url.loc, validate_sitemap_path(sitemap: { url: sitemap_index_url.loc}) %>
+    <small><%= link_to "[xml]", sitemap_index_url.loc %>
+  <%= link_to safe_join([content_tag(:span, '', class: 'glyphicon glyphicon-transfer'), content_tag(:span, 'validate', class: 'text')], '&nbsp'.html_safe), validate_sitemap_resource_url(url: sitemap_index_url.to_h.except(:doc)), class: 'btn btn-default btn-sm validate-resource' %>
+  
+  </small>
+  </h4>
+  
+  <dl class="dl-horizontal">
+    <%= render 'common_core', object: sitemap_index_url %>
+    <%= render 'resourcesync_core', object: sitemap_index_url %>
+  </dl>
+</li>

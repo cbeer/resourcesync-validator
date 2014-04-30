@@ -1,0 +1,18 @@
+<li class="url">
+  <h4 class="loc">
+    <% if sitemap_url.md and sitemap_url.md["capability"].present? %>
+      <%= link_to sitemap_url.loc, validate_sitemap_path(sitemap: { url: sitemap_url.loc}) %>
+      <small><%= link_to "[xml]", sitemap_url.loc %></small>
+    <% else %>
+      <%= link_to sitemap_url.loc, sitemap_url.loc %>
+    <% end %>
+
+    <%= link_to safe_join([content_tag(:span, '', class: 'glyphicon glyphicon-transfer'), content_tag(:span, 'validate', class: 'text')], '&nbsp'.html_safe), validate_sitemap_resource_url(url: sitemap_url.to_h.except(:doc)), class: 'btn btn-default btn-sm validate-resource' %>
+
+  </h4>
+  
+  <dl class="dl-horizontal">
+    <%= render 'common_core', object: sitemap_url %>
+    <%= render 'resourcesync_core', object: sitemap_url %>
+  </dl>
+</li>

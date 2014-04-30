@@ -9,7 +9,7 @@
 <% data.each do |k, urls|  %>
     <%= content_tag :div, id: k, class: "tab-pane #{'in active' if k == data.keys.first}" do %>
     <h3><%= k %> <span class="badge"><%= urls.length %></span></h3>
-    <%= render partial: 'url', collection: urls %>
+    <%= render urls %>
   <% end %>
 <% end %>
 </div>

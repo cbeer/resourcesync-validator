@@ -1,0 +1,2 @@
+class SitemapIndexUrl < SitemapUrl
+end
