@@ -1,4 +1,4 @@
-<% if object.respond_to?(:md) and object.md %>
+<% if object.md %>
 
   <% if object.md['capability'] %>
   <dt>capability</dt>
@@ -49,4 +49,4 @@
       <% end %>
     <% end %>
   </dd>
-<% end if object.respond_to? :ln  %>
+<% end %>
