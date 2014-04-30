@@ -1,138 +1,59 @@
 require 'benchmark'
+
+##
+# Validate a Sitemap.org and ResourceSync document
 class Sitemap
   extend ActiveModel::Naming
   include ActiveModel::Conversion
   include ActiveModel::Validations
+  include Sitemap::Validations
 
   attr_reader :url, :input_content
 
-  class HttpValidations < ActiveModel::Validator
-    include ActionView::Helpers::NumberHelper
-    
-    def validate sitemap
-      return if sitemap.input_content
-      
-      if sitemap.response.status == 200 
-        sitemap.ok.add "http_Status", "OK"
-      else
-        sitemap.errors.add "http_Status", sitemap.response.status 
-      end
-
-      if Sitemap.valid_http_content_types.include? sitemap.response.headers['Content-Type']
-        sitemap.ok.add "http_Content-Type", sitemap.response.headers['Content-Type']
-      else
-        sitemap.errors.add "http_Content-Type", sitemap.response.headers['Content-Type'] 
-      end  
-
-      if sitemap.timing < 2
-        sitemap.ok.add "http_Response Time", "#{sitemap.timing}s"
-      elsif sitemap.timing < 10
-        sitemap.warnings.add "http_Response Time", "#{sitemap.timing}s"
-      else
-        sitemap.errors.add "http_Response Time", "#{sitemap.timing}s"
-      end
-      
-      if sitemap.length > 0
-        sitemap.ok.add "http_Response items", number_with_delimiter(sitemap.length)
-      else
-        sitemap.warnings.add "http_Response items", number_with_delimiter(sitemap.length)
-      end
-      
-      if sitemap.response.body.length < 10.megabytes
-        sitemap.ok.add "http_Response Size", number_to_human_size(sitemap.response.body.length)
-      else
-        sitemap.warnings.add "http_Response Size", number_to_human_size(sitemap.response.body.length)
-      end
-    end
-  end
-  
-  class SchemaValidations < ActiveModel::Validator
-    include ActionView::Helpers::NumberHelper
-    
-    def validate sitemap
-      
-      if sitemap.sitemap?
-        sitemap.ok.add 'xsd_Sitemap', "Present"
-      else
-        sitemap.errors.add 'xsd_Sitemap', "Missing"
-      end
-
-      if sitemap.resourcesync?
-        sitemap.ok.add 'xsd_Resource Sync', "Present"
-      else
-        sitemap.warnings.add 'xsd_Resource Sync', "Missing"
-      end
-      
-      if sitemap.schema_valid?
-        sitemap.ok.add 'xsd_Schema Valid', "Yes"
-      else
-        sitemap.errors.add 'xsd_Schema Valid', "No"
-      end
-    end
-  end
-
-  class LinkValidations < ActiveModel::Validator
-    include ActionView::Helpers::NumberHelper
-    
-    def validate sitemap
-      return unless sitemap.resourcesync?
-
-      if sitemap.lns_by_rel['describedby'].blank?
-        sitemap.warnings.add 'rs:ln_describedby', "Missing"
-      end
-      
-      if sitemap.lns_by_rel['up'].blank? and !sitemap.description?
-        sitemap.warnings.add 'rs:ln_up', "Missing"
-      end
-    end
-  end
-  
-  class MdValidations < ActiveModel::Validator
-    include ActionView::Helpers::NumberHelper
-    
-    def validate sitemap
-      return unless sitemap.resourcesync?
-
-
-      (sitemap.required_md_attributes - sitemap.md.keys).each do |k|
-        sitemap.errors.add "rs:md_#{k}", "Missing"
-      end
-
-      (sitemap.preferred_md_attributes - sitemap.md.keys).each do |k|
-        sitemap.warnings.add "rs:md_#{k}", "Missing"
-      end
-    end
-  end
-  validates_with HttpValidations
-  validates_with SchemaValidations
-  validates_with LinkValidations
-  validates_with MdValidations
-
   def self.valid_capabilities
     ['description', 'capabilitylist', 'resourcelist', 'resourcedump', 'resourcedump-manifest','changelist', 'changedump', 'changedump-manifest']
+  end
+  
+  def self.sitemap_xmlns
+    "http://www.sitemaps.org/schemas/sitemap/0.9"
+  end
+  
+  def xmlns
+    self.class.sitemap_xmlns
+  end
+
+  self.valid_capabilities.each do |c|
+    define_method "#{c.underscore}?" do
+      doc.root.xpath("rs:md[@capability=\"#{c}\"]", rs: "http://www.openarchives.org/rs/terms/").any?
+    end
   end
   
   def self.valid_http_content_types
     ["application/xml", "text/xml", "application/x-gzip"]
   end
   
-  def valid?
-    return @valid if instance_variable_defined? :@valid
-    @valid ||= super
+  ##
+  # Merge the sitemapindex and resourcesync schemas
+  # @return [Nokogiri::XML::Schema] schema
+  def self.joint_index_schema
+    @sitemap_index_schema ||= Nokogiri::XML::Schema <<-EOF
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:import namespace="http://www.openarchives.org/rs/terms/" schemaLocation="http://www.openarchives.org/rs/0.9.1/resourcesync.xsd" />
+    <xs:import namespace="http://www.sitemaps.org/schemas/sitemap/0.9" schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9/siteindex.xsd" />
+    </xs:schema>
+    EOF
   end
   
-  def ok
-    @ok ||= ActiveModel::Errors.new(self)
-  end
-  
-  def warnings
-    @warnings ||= ActiveModel::Errors.new(self)
-  end
-  
-  def validations_for key
-    (errors.keys + warnings.keys + ok.keys).select do |x|
-      x.to_s.starts_with? key
-    end
+  ##
+  # Merge the sitemapindex and resourcesync schemas
+  # @return [Nokogiri::XML::Schema] schema
+  def self.joint_sitemap_schema
+    @sitemap_schema ||= Nokogiri::XML::Schema <<-EOF
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:import namespace="http://www.openarchives.org/rs/terms/" schemaLocation="http://www.openarchives.org/rs/0.9.1/resourcesync.xsd" />
+    <xs:import namespace="http://www.sitemaps.org/schemas/sitemap/0.9" schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" />
+    </xs:schema>
+    EOF
   end
   
   def initialize options = {}
@@ -144,6 +65,8 @@ class Sitemap
     end
   end
   
+  ##
+  # Initialize the sitemap from a URL
   def initialize_by_url options
     @url = options[:url]
     
@@ -152,12 +75,36 @@ class Sitemap
     end
   end
   
+  ##
+  # Initialize the sitemap from some provided sitemap document
   def initialize_by_data options
     @content = @input_content = options[:input_content]
     @response = OpenStruct.new(headers: { }, body: @content)
     @timing = -1
   end
+
+  validates_with Validations::HttpValidations
+  validates_with Validations::SchemaValidations
+  validates_with Validations::LinkValidations
+  validates_with Validations::MdValidations
+
+  ##
+  # Fetch the sitemap from the given URL
+  def response
+    @response ||= recording_timing_information(:@timing) do
+      discover_and_fetch_sitemap @url
+    end
+  end
   
+  ##
+  # Duration for retrieving the response
+  def timing
+    response
+    @timing
+  end
+  
+  ##
+  # Get the document content from the URL, ungzipping if necessary
   def content
     @content ||= begin
       Zlib::GzipReader.new( StringIO.new(response.body) ).read
@@ -165,24 +112,135 @@ class Sitemap
       response.body
     end
   end
-  
-  def timing
-    response
-    @timing
+
+  ##
+  # Parse the document as XML
+  def doc
+    @doc ||= Nokogiri::XML(content)
+  end
+
+  ##
+  # Is the document even a sitemap?
+  def sitemap?
+    index? || urlset?
   end
   
-  def response
-    @response ||= recording_timing_information(:@timing) do
-      discover_and_fetch_sitemap @url
+  ##
+  # Is the document a sitemapindex?
+  def index?
+    doc.xpath("sm:sitemapindex", sm: xmlns).any?
+  end
+  
+  ##
+  # Is the document a urlset?
+  def urlset?
+    doc.xpath('sm:urlset', sm: xmlns).any?
+  end
+  
+  ##
+  # Does the document have resourcesync attributes?
+  def resourcesync?
+    doc.root.xpath('rs:md[@capability]', rs: "http://www.openarchives.org/rs/terms/").any?
+  end
+  
+  ##
+  # Get the associated sitemap documents for this sitemap index 
+  def sitemaps
+    doc.xpath("//sm:sitemap", sm: xmlns).map do |s|
+      SitemapIndexUrl.from_fragment s
     end
   end
   
+  ##
+  # Get the associated URLs for this sitemap
+  def urls
+    doc.xpath("//sm:url", sm: xmlns).map do |s|
+      SitemapUrl.from_fragment s
+    end
+  end
+  
+  ##
+  # Count the number of documents in the sitemap 
+  def length
+    if index?
+      sitemaps.length
+    else
+      urls.length
+    end
+  end
+  
+  ##
+  # Is the document schema-valid?
+  def schema_valid?
+    sitemap_schema.valid? doc
+  end
+
+  ##
+  # Get the schema validation errors
+  def schema_errors
+    @sitemap_validation_errors ||= sitemap_schema.validate doc
+  end
+  
+  ##
+  # Get the schema appropriate to the content type
+  def sitemap_schema
+    if index?
+      self.class.joint_index_schema
+    else
+      self.class.joint_sitemap_schema
+    end
+  end
+  
+  ##
+  # Get the top-level resourcesync metadata
+  def md
+    x = doc.root.xpath("rs:md", rs: "http://www.openarchives.org/rs/terms/").first
+    if x
+      Hash[x.attributes.map { |k,v| [k, v.to_s] }]
+    else
+      {}
+    end 
+  end
+
+  ##
+  # Get the resourcesync lns
+  def lns
+    doc.root.xpath("rs:ln", rs: "http://www.openarchives.org/rs/terms/").map do |x| 
+      Hash[x.attributes.map { |k,v| [k, v.to_s]}]
+    end
+  end
+  
+  ##
+  # Get the resourcesync lns grouped by the relationship
+  def lns_by_rel
+    @lns_by_rel ||= lns.group_by { |x| x['rel'] }
+  end
+
+  ##
+  # Get the resourcesync changelist grouped by the change type
+  def changes
+    @changes ||= urls.group_by { |x| (x.md || {})["change"] } if changelist? or changedump?
+  end
+  
+  def persisted?
+    false
+  end
+
+  private
+  
+  ##
+  # Fetch the content of the URL
+  # @params [String] url URL to fetch
+  # @return [Faraday::Response]
   def discover_and_fetch_sitemap url
     url = URI.parse url
 
     Faraday.get url
   end
   
+  ##
+  # Record the time it takes to execute the block in the instance variable given
+  # @param [Symbol] as an instance variable name, e.g. :@timing
   def recording_timing_information as, &block
     tmp = nil
     
@@ -195,131 +253,4 @@ class Sitemap
     tmp
   end
   
-  def doc
-    @doc ||= Nokogiri::XML(content)
-  end
-  
-  def persisted?
-    false
-  end
-  
-  def sitemap?
-    index? || doc.xpath('sm:urlset', sm: "http://www.sitemaps.org/schemas/sitemap/0.9").any?
-  end
-  
-  def resourcesync?
-    doc.root.xpath('rs:md[@capability]', rs: "http://www.openarchives.org/rs/terms/").any?
-  end
-  
-  self.valid_capabilities.each do |c|
-    define_method "#{c.underscore}?" do
-      doc.root.xpath("rs:md[@capability=\"#{c}\"]", rs: "http://www.openarchives.org/rs/terms/").any?
-    end
-  end
-  
-  def xmlns
-    default_xmlns
-  end
-  
-  def default_xmlns
-    "http://www.sitemaps.org/schemas/sitemap/0.9"
-  end
-  
-  def index?
-    doc.xpath("sm:sitemapindex", sm: xmlns).any?
-  end
-  
-  def sitemaps
-    doc.xpath("//sm:sitemap", sm: xmlns).map do |s|
-      SitemapIndexUrl.from_fragment s
-    end
-  end
-  
-  def schema_valid?
-    sitemap_schema.valid? doc
-  end
-
-  def schema_errors
-    @sitemap_validation_errors ||= sitemap_schema.validate doc
-  end
-  
-  def sitemap_schema
-    if index?
-      joint_index_schema
-    else
-      joint_sitemap_schema
-    end
-  end
-
-  def joint_index_schema
-    $sitemap_index_schema ||= Nokogiri::XML::Schema <<-EOF
-    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
-    <xs:import namespace="http://www.openarchives.org/rs/terms/" schemaLocation="http://www.openarchives.org/rs/0.9.1/resourcesync.xsd" />
-    <xs:import namespace="http://www.sitemaps.org/schemas/sitemap/0.9" schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9/siteindex.xsd" />
-    </xs:schema>
-    EOF
-  end
-  
-  def joint_sitemap_schema
-    $sitemap_schema ||= Nokogiri::XML::Schema <<-EOF
-    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
-    <xs:import namespace="http://www.openarchives.org/rs/terms/" schemaLocation="http://www.openarchives.org/rs/0.9.1/resourcesync.xsd" />
-    <xs:import namespace="http://www.sitemaps.org/schemas/sitemap/0.9" schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" />
-    </xs:schema>
-    EOF
-  end
-  
-  def urls
-    doc.xpath("//sm:url", sm: xmlns).map do |s|
-      SitemapUrl.from_fragment s
-    end
-  end
-  
-  def md
-    x = doc.root.xpath("rs:md", rs: "http://www.openarchives.org/rs/terms/").first
-    if x
-      Hash[x.attributes.map { |k,v| [k, v.to_s] }]
-    else
-      {}
-    end 
-  end
-  
-  def required_md_attributes
-    required_attributes = []
-    if (resourcelist? || resourcedump? || resourcedump_manifest?)
-      required_attributes << 'at'
-    end
-    
-    if (changelist? or changedump?)
-      required_attributes << 'from'
-    end
-    
-    required_attributes
-  end
-  
-  def preferred_md_attributes
-    preferred_md_attributes = []
-    if (changelist? or changedump? or changedump_manifest?)
-      preferred_md_attributes << 'until'
-    end
-    preferred_md_attributes
-  end
-  
-  def lns
-    doc.root.xpath("rs:ln", rs: "http://www.openarchives.org/rs/terms/").map do |x| 
-      Hash[x.attributes.map { |k,v| [k, v.to_s]}]
-    end
-  end
-  
-  def lns_by_rel
-    @lns_by_rel ||= lns.group_by { |x| x['rel'] }
-  end
-  
-  def length
-    urls.length + sitemaps.length
-  end
-  
-  def changes
-    @changes ||= urls.group_by { |x| (x.md || {})["change"] } if changelist? or changedump?
-  end
 end

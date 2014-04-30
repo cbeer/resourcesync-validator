@@ -16,11 +16,7 @@ class SitemapUrl < OpenStruct
     h['md'] &&= h['md'].first
     self.new({doc: s}.merge(h))
   end
-  
-  def persisted?
-    false
-  end
-  
+
   def response
     @response ||= Faraday.get loc
   end
@@ -33,10 +29,6 @@ class SitemapUrl < OpenStruct
     DateTime.parse(response.headers['Last-Modified']) if response.headers['Last-Modified']
   end
   
-  def to_partial_path
-    "sitemaps/#{self.class.to_s.underscore}"
-  end
-  
   def lns
     ln || []
   end
@@ -44,4 +36,13 @@ class SitemapUrl < OpenStruct
   def lns_by_rel
     lns.group_by { |x| x['rel'] }
   end
+  
+  def persisted?
+    false
+  end
+  
+  def to_partial_path
+    "sitemaps/#{self.class.to_s.underscore}"
+  end
+  
 end
