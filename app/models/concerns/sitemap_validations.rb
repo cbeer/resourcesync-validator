@@ -1,6 +1,6 @@
 ##
 # Validation helpers for sitemaps
-module Sitemap::Validations
+module SitemapValidations
   
   # Validation methods
   # Note: the method #errors is provided by ActiveModel::Validations

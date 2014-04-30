@@ -6,7 +6,7 @@ class Sitemap
   extend ActiveModel::Naming
   include ActiveModel::Conversion
   include ActiveModel::Validations
-  include Sitemap::Validations
+  include SitemapValidations
 
   attr_reader :url, :input_content
 
@@ -96,10 +96,10 @@ class Sitemap
     @timing = -1
   end
 
-  validates_with Validations::HttpValidations
-  validates_with Validations::SchemaValidations
-  validates_with Validations::LinkValidations
-  validates_with Validations::MdValidations
+  validates_with SitemapValidations::HttpValidations
+  validates_with SitemapValidations::SchemaValidations
+  validates_with SitemapValidations::LinkValidations
+  validates_with SitemapValidations::MdValidations
 
   ##
   # Fetch the sitemap from the given URL
