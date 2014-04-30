@@ -28,16 +28,19 @@ class SitemapsController < ApplicationController
     errors = ActiveModel::Errors.new url
     
     if url.response.status == 200
-    
-      last_modified_date = DateTime.parse(url.lastmod)
-      
-      if url.lastmod.length <= 10
-        # yyyy-mm-dd granularity
-        last_modified_date += 1.day
-      end
-      
-      if url.response_last_modified && url.lastmod && url.response_last_modified > last_modified_date
-        errors.add "last modified" "expected #{url.lastmod} to be later than #{url.response_last_modified}"
+
+      if url.response_last_modified && url.lastmod
+
+        last_modified_date = DateTime.parse(url.lastmod)
+
+        if url.lastmod.length <= 10
+          # yyyy-mm-dd granularity
+          last_modified_date += 1.day
+        end
+
+        if url.response_last_modified && url.lastmod && url.response_last_modified > last_modified_date
+          errors.add "last modified" "expected #{url.lastmod} to be later than #{url.response_last_modified}"
+        end
       end
       
       if url.md && url.md[:length] && url.response_length != url.md[:length]
