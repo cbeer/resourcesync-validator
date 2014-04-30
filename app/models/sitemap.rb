@@ -248,7 +248,10 @@ class Sitemap
   def discover_and_fetch_sitemap url
     url = URI.parse url
 
-    Faraday.get url
+    Faraday.new do |conn|
+      conn.use :instrumentation
+      conn.adapter Faraday.default_adapter
+    end.get url
   end
   
   ##

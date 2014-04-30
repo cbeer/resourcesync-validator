@@ -24,7 +24,12 @@ class SitemapUrl < OpenStruct
   ##
   # Retrieve the content at the given location
   def response
-    @response ||= Faraday.get loc
+    @response ||= begin
+      Faraday.new do |conn|
+        conn.use :instrumentation
+        conn.adapter Faraday.default_adapter
+      end.get loc
+    end
   end
   
   ##

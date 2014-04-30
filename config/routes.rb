@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Peek::Railtie => '/peek'
   root 'sitemaps#new'
   get '/validate' => 'sitemaps#validate', as: 'validate_sitemap'
   get '/validate_resource' => 'sitemaps#validate_resource', as: 'validate_sitemap_resource'

@@ -46,9 +46,16 @@ end
 gem 'nokogiri'
 gem 'bootstrap-sass'
 gem 'faraday'
+gem 'faraday_middleware'
 gem 'ace-rails-ap'
 gem 'secure_headers'
 gem 'rack-attack'
+gem 'peek'
+gem 'peek-performance_bar'
+gem 'peek-faraday'
+gem 'peek-git'
+gem 'peek-gc'
+gem 'peek-rblineprof'
 
 group :test do
   gem 'vcr'

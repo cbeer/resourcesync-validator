@@ -7,6 +7,11 @@
 body {
   padding-top: 3em;
 }
+#peek {
+  position: absolute; 
+  top: 0;
+  width: 100%;
+}
 
 
 #editor {
