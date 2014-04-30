@@ -10,14 +10,20 @@ class Sitemap
 
   attr_reader :url, :input_content
 
+  ##
+  # List of valid ResourceSync capability types
   def self.valid_capabilities
     ['description', 'capabilitylist', 'resourcelist', 'resourcedump', 'resourcedump-manifest','changelist', 'changedump', 'changedump-manifest']
   end
   
+  ##
+  # Default sitemap XMLNS
   def self.sitemap_xmlns
     "http://www.sitemaps.org/schemas/sitemap/0.9"
   end
   
+  ##
+  # Sitemap xmlns as used in this document
   def xmlns
     self.class.sitemap_xmlns
   end
@@ -28,8 +34,10 @@ class Sitemap
     end
   end
   
+  ##
+  # List of valid HTTP content-type headers for a sitemap
   def self.valid_http_content_types
-    ["application/xml", "text/xml", "application/x-gzip"]
+    @valid_http_content_types ||= ["application/xml", "text/xml", "application/x-gzip"]
   end
   
   ##
@@ -56,6 +64,11 @@ class Sitemap
     EOF
   end
   
+  ##
+  # Load a new sitemap by url or content
+  # @param [Hash] options
+  # @option options [String] :url URL to a sitemap document
+  # @option options [String] :input_content content of a sitemap document 
   def initialize options = {}
     case
     when options[:url]

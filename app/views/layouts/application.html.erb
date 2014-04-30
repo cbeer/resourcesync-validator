@@ -24,7 +24,7 @@
           <%= image_tag 'resync_logo.jpg', height: 32 %>
           Resource Sync Validator
         <% end %>
-        <%= render 'sitemaps/form' unless on_sitemaps_new_page? %>
+        <%= render 'sitemaps/form' unless current_page?(root_url) %>
       </div>
     </div>
   </div>

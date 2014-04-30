@@ -2,7 +2,7 @@
   <% if @sitemap.md %>
     <dt>capability</dt>
     <dd>
-      <span class="label label-<%= Sitemap.valid_capabilities.include?(@sitemap.md['capability']) ? 'success' : 'warning' %>"><%= @sitemap.md['capability'] %></span>
+      <span class="label label-<%= is_valid_capability?(@sitemap.md['capability']) ? 'success' : 'warning' %>"><%= @sitemap.md['capability'] %></span>
     </dd>
 
     <% @sitemap.md.except('capability').each do |k,v| %>

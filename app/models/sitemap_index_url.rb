@@ -1,3 +1,5 @@
+##
+# A sitemapindex sitemap entry
 class SitemapIndexUrl < SitemapUrl
   ##
   # Load this sitemap index url as a sitemap

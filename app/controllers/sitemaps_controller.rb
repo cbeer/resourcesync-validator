@@ -1,8 +1,14 @@
+##
+# Machinery for validating sitemaps
 class SitemapsController < ApplicationController
+  ##
+  # [GET] Landing page
   def new
     @sitemap = Sitemap.new
   end
   
+  ##
+  # [GET/POST] Validate a sitemap given by a URL or by POSTed content
   def validate
     @sitemap = Sitemap.new sitemap_params
     
@@ -14,9 +20,10 @@ class SitemapsController < ApplicationController
     end
   end
   
+  ##
+  # [GET] Validate a sitemap resource against sitemap and resourcesync metadata 
   def validate_resource
-    params.require(:url)
-    url = SitemapUrl.new params[:url]
+    url = SitemapUrl.new resource_params
     
     errors = ActiveModel::Errors.new url
     
@@ -57,5 +64,9 @@ class SitemapsController < ApplicationController
   private
   def sitemap_params
     params.require(:sitemap)
+  end
+  
+  def resource_params
+    params.require(:url)
   end
 end

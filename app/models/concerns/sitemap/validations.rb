@@ -1,3 +1,5 @@
+##
+# Validation helpers for sitemaps
 module Sitemap::Validations
   
   # Validation methods
@@ -137,7 +139,6 @@ module Sitemap::Validations
     def validate sitemap
       return unless sitemap.resourcesync?
 
-
       (required_md_attributes(sitemap) - sitemap.md.keys).each do |k|
         sitemap.errors.add "rs:md_#{k}", "Missing"
       end
@@ -147,6 +148,9 @@ module Sitemap::Validations
       end
     end
     
+    private
+    ##
+    # List of required resourcesync metadata attributes for the resourcesync capability
     def required_md_attributes sitemap
       required_attributes = []
       if (sitemap.resourcelist? || sitemap.resourcedump? || sitemap.resourcedump_manifest?)
@@ -160,6 +164,8 @@ module Sitemap::Validations
       required_attributes
     end
     
+    ##
+    # List of recommended resourcesync metadata attributes for the resourcesync capability
     def preferred_md_attributes sitemap
       preferred_md_attributes = []
       if (sitemap.changelist? or sitemap.changedump? or sitemap.changedump_manifest?)

@@ -2,7 +2,7 @@
 
   <% if object.md['capability'] %>
   <dt>capability</dt>
-  <dd><span class="label label-<%= Sitemap.valid_capabilities.include?(object.md['capability']) ? 'success' : 'warning' %>"><%= object.md['capability'] %></span></dd>
+  <dd><span class="label label-<%= is_valid_capability?(object.md['capability']) ? 'success' : 'warning' %>"><%= object.md['capability'] %></span></dd>
   <% end %>
 
   <% if @sitemap.changelist? and object.md['change'].blank? %>
