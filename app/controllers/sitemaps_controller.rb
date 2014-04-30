@@ -22,7 +22,14 @@ class SitemapsController < ApplicationController
     
     if url.response.status == 200
     
-      if url.response_last_modified && url.lastmod && url.response_last_modified > DateTime.parse(url.lastmod)
+      last_modified_date = DateTime.parse(url.lastmod)
+      
+      if url.lastmod.length <= 10
+        # yyyy-mm-dd granularity
+        last_modified_date += 1.day
+      end
+      
+      if url.response_last_modified && url.lastmod && url.response_last_modified > last_modified_date
         errors.add "last modified" "expected #{url.lastmod} to be later than #{url.response_last_modified}"
       end
       
