@@ -1,11 +1,14 @@
 <li class="url">
   <h4 class="loc">
-    <% if url["md"] and url["md"].any? { |x| x["capability"].present? } %>
+    <% if url.md and url.md["capability"].present? %>
       <%= link_to url.loc, validate_sitemap_path(sitemap: { url: url.loc}) %>
       <small><%= link_to "[xml]", url.loc %></small>
     <% else %>
       <%= link_to url.loc, url.loc %>
     <% end %>
+
+    <%= link_to safe_join([content_tag(:span, '', class: 'glyphicon glyphicon-transfer'), content_tag(:span, 'validate', class: 'text')], '&nbsp'.html_safe), validate_sitemap_resource_url(url: url.to_h.except(:doc)), class: 'btn btn-default btn-sm validate-resource' %>
+
   </h4>
   
   <dl class="dl-horizontal">

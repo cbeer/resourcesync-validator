@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'sitemaps#new'
   get '/validate' => 'sitemaps#validate', as: 'validate_sitemap'
+  get '/validate_resource' => 'sitemaps#validate_resource', as: 'validate_sitemap_resource'
   post '/validate' => 'sitemaps#validate'
 
   # The priority is based upon order of creation: first created -> highest priority.

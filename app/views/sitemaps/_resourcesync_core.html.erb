@@ -1,33 +1,33 @@
-<% if object.respond_to?(:md) and object.md.first %>
-<% md = object.md.first %>
+<% if object.respond_to?(:md) and object.md %>
 
-<% if md['capability'] %>
-<dt>capability</dt>
-<dd><span class="label label-<%= Sitemap.valid_capabilities.include?(@sitemap.md['capability']) ? 'success' : 'warning' %>"><%= @sitemap.md['capability'] %></span></dd>
-<% end %>
+  <% if object.md['capability'] %>
+  <dt>capability</dt>
+  <dd><span class="label label-<%= Sitemap.valid_capabilities.include?(object.md['capability']) ? 'success' : 'warning' %>"><%= object.md['capability'] %></span></dd>
+  <% end %>
 
-<% if @sitemap.changelist? and md['change'].blank? %>
-  <dt>change</dt>
-  <dd><span class="label label-danger">missing</span></dd>
-<% end %>
+  <% if @sitemap.changelist? and object.md['change'].blank? %>
+    <dt>change</dt>
+    <dd><span class="label label-danger">missing</span></dd>
+  <% end %>
 
-  <% md.except('capability').each do |k,v| %>
+  <% object.md.except('capability').each do |k,v| %>
     <dt><%= k %></dt>
     <dd><%= v %></dd>
   <% end %>
 <% elsif @sitemap.changelist? %>
-<dt>md</dt>
-<dd>
-  <% if @sitemap.index? %>
-  <span class="label label-warning">missing</span>
-  <% else %>
-  <span class="label label-danger">missing</span>
-  <% end %>
-</dd>
+  <dt>md</dt>
+  <dd>
+    <% if @sitemap.index? %>
+    <span class="label label-warning">missing</span>
+    <% else %>
+    <span class="label label-danger">missing</span>
+    <% end %>
+  </dd>
 <% elsif @sitemap.resourcelist? or @sitemap.resourcedump? or @sitemap.resourcedump_manifest? %>
-<dt>md</dt>
-<dd><span class="label label-warning">missing</span></dd>
+  <dt>md</dt>
+  <dd><span class="label label-warning">missing</span></dd>
 <% end %>
+
 <% object.ln.group_by { |x| x['rel'] }.each do |rel, lns| %>
 <dt>
   <% if rel.nil? %>

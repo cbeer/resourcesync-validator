@@ -279,6 +279,8 @@ class Sitemap
         else
           h[n.name] = n.inner_text
         end
+        
+        h['md'] &&= h['md'].first
       end
       OpenStruct.new({doc: s}.merge(h))
     end

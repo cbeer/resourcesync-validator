@@ -1,3 +1,8 @@
+<% if @sitemap.valid? and @sitemap.warnings.empty? %>
+<div class="alert alert-success">
+  Valid sitemap!
+</div>
+<% end %>
 <ul class="nav nav-tabs">
   <li class="active"><a href="#validation" data-toggle="tab">Validation</a></li>
   <% if @sitemap.index? || @sitemap.capabilitylist? %>
